@@ -67,7 +67,7 @@ const renderPage = (title, content) => `
         <h1>${title} - مقاطعة سبارك</h1>
         ${content}
         <div class="footer-section">
-            <a href="https://discord.gg/WvNpv4SH" class="server-invite" target="_blank">دخول مقاطعة سبارك</a>
+            <a href="https://discord.gg/sp10" class="server-invite" target="_blank">دخول مقاطعة سبارك</a>
             <br>
             <span class="copyright-text">جميع الحقوق محفوظة لمقاطعة سبارك</span>
         </div>
