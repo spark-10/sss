@@ -36,8 +36,15 @@ const styles = `
     .info-box { background: rgba(231, 76, 60, 0.1); border: 1px solid #e74c3c; padding: 15px; border-radius: 10px; margin: 15px 0; font-style: italic; color: #fce4e4; }
     
     .footer-section { text-align: center; margin-top: 40px; padding-bottom: 20px; border-top: 1px solid #333; padding-top: 20px; }
+    
+    /* أزرار الفوتر */
+    .footer-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; }
+    
     .server-invite { display: inline-block; background: #e74c3c; color: white; padding: 12px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 18px; transition: 0.3s; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); }
     .server-invite:hover { transform: translateY(-3px); background: #ff5e4d; box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5); }
+    
+    .fivem-invite { display: inline-block; background: #f39c12; color: white; padding: 12px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 18px; transition: 0.3s; box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3); }
+    .fivem-invite:hover { transform: translateY(-3px); background: #f1c40f; box-shadow: 0 6px 20px rgba(243, 156, 18, 0.5); }
     
     .copyright-text { display: inline-block; margin-top: 25px; font-size: 16px; font-weight: bold; background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff); background-size: 400% 400%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: rainbow 5s ease infinite; }
     @keyframes rainbow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
@@ -69,7 +76,10 @@ const renderPage = (title, content) => `
         <h1>${title}</h1>
         ${content}
         <div class="footer-section">
-            <a href="https://discord.gg/sp10" class="server-invite" target="_blank">دخول مقاطعة سبارك</a>
+            <div class="footer-buttons">
+                <a href="fivem://connect/cfx.re/join/p9bd35" class="fivem-invite">دخول إلى داخل المدينة</a>
+                <a href="https://discord.gg/sp10" class="server-invite" target="_blank">ديسكورد مقاطعة سبارك</a>
+            </div>
             <br>
             <span class="copyright-text">جميع الحقوق محفوظة لمقاطعة سبارك</span>
         </div>
@@ -170,7 +180,7 @@ app.get('/trusted-apply', (req, res) => {
             <li>حرية كاملة في التنقل لسد الاحتياج في أي قطاع فوراً.</li>
             <li>توجد مميزات ومكافآت مجزية ونادرة تُمنح من الإدارة.</li>
         </ul>`;
-    res.send(renderPage('شروط قبول اللاعب المعتمد', content));
+    res.send(renderPage('شروط ورتب اللاعب المعتمد', content));
 });
 
 // المسارات الأخرى (الجريدة، المطاردات، المناطق الآمنة)
@@ -184,8 +194,17 @@ app.get('/chase', (req, res) => {
     res.send(renderPage('المطاردات والقيادة', content));
 });
 
+// تعديل المناطق الآمنة بناءً على طلبك
 app.get('/safe', (req, res) => {
-    const content = `<h2>المناطق الآمنة</h2><ul class="law-list"><li>1 - المستشفيات ومراكز الشرطة</li><li>2 - معرض المركبات</li><li>3 - مناطق العمل القانونية</li></ul>`;
+    const content = `
+        <h2>المناطق الآمنة</h2>
+        <ul class="law-list">
+            <li>1 - المستشفيات ومراكز الشرطة وحرس الحدود</li>
+            <li>2 - معرض المركبات والشاحنات</li>
+            <li>3 - حجز المركبات والشاحنات</li>
+            <li>4 - مركز التوظيف ومكان استخراج الرخص - مناطق العمل القانونية</li>
+            <li>5 - مناطق العمل (الأخشاب - الدواجن - الأعناب الخ...)</li>
+        </ul>`;
     res.send(renderPage('المناطق الآمنة', content));
 });
 
