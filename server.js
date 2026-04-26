@@ -5,294 +5,194 @@ const styles = `
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
     
+    * { box-sizing: border-box; }
     body { 
-        margin: 0; 
-        padding: 0; 
-        font-family: 'Cairo', sans-serif; 
-        color: #fff; 
-        direction: rtl; 
-        overflow-x: hidden; 
-        background: #0d0d0d url('https://cdn.discordapp.com/attachments/1478519443968753695/1478522145469370570/fca6a48587bf24ac.png') no-repeat center center fixed;
-        background-size: cover;
-    }
-    
-    /* جعل الخلفية أغمق قليلاً لتوضيح البطاقات */
-    body::before {
-        content: "";
-        position: fixed;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        z-index: -1;
+        margin: 0; padding: 0; font-family: 'Cairo', sans-serif; color: #fff; direction: rtl; 
+        background-color: #0b0b0b; overflow-x: hidden;
     }
 
+    /* الهيدر والملاحة */
     .navbar { 
-        background: rgba(0, 0, 0, 0.85); 
-        padding: 15px 0; 
-        text-align: center; 
-        position: sticky; 
-        top: 0; 
-        backdrop-filter: blur(10px); 
-        border-bottom: 2px solid #e74c3c; 
-        z-index: 100; 
-        display: flex; 
-        justify-content: center; 
-        flex-wrap: wrap; 
-        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        display: flex; justify-content: space-between; align-items: center;
+        padding: 20px 8%; position: absolute; width: 100%; z-index: 1000;
     }
-    .navbar a { 
-        color: rgba(255,255,255,0.7); 
-        text-decoration: none; 
-        margin: 5px 15px; 
-        font-weight: bold; 
-        font-size: 16px; 
-        transition: 0.3s; 
-        padding: 8px 15px; 
-        border-radius: 8px; 
+    .nav-links a { 
+        color: #fff; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 15px; transition: 0.3s;
     }
-    .navbar a:hover, .navbar a.active { 
-        color: #fff; 
-        background: rgba(231, 76, 60, 0.15); 
-    }
+    .nav-links a:hover { color: #d4af37; }
+    .logo { font-size: 24px; font-weight: bold; color: #d4af37; display: flex; align-items: center; gap: 10px; }
 
-    .container { 
-        max-width: 1100px; 
-        margin: 50px auto; 
-        padding: 0 20px; 
-        padding-bottom: 50px;
+    /* القسم الرئيسي (Hero Section) */
+    .hero {
+        height: 100vh;
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), 
+                    url('https://images.wallpaperscraft.com/image/single/chevrolet_camaro_front_view_156230_1920x1080.jpg');
+        background-size: cover; background-position: center;
+        display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+        padding: 0 20px;
     }
+    .hero h1 { font-size: 50px; margin-bottom: 10px; color: #fff; }
+    .hero p { font-size: 18px; color: rgba(255,255,255,0.8); max-width: 700px; margin-bottom: 30px; }
     
-    /* تنسيق شبكة البطاقات (Grid) */
-    .cards-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        margin-top: 40px;
+    .btn-discord {
+        background: #d4af37; color: #000; padding: 12px 40px; border-radius: 5px;
+        text-decoration: none; font-weight: bold; font-size: 18px; transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
     }
-    
-    /* تنسيق البطاقة الفردية */
-    .card {
-        background: rgba(25, 25, 25, 0.9);
-        border-radius: 15px;
-        padding: 30px;
-        text-align: center;
-        transition: 0.3s ease;
-        border: 1px solid rgba(255,255,255,0.05);
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    /* تأثير التحويم فوق البطاقة */
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(231, 76, 60, 0.2);
-        border-color: rgba(231, 76, 60, 0.3);
-    }
-    
-    /* تنسيق الأيقونة الملونة داخل البطاقة */
-    .card-icon {
-        width: 60px;
-        height: 60px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 30px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        color: #fff;
-    }
-    
-    /* الألوان المختلفة للأيقونات */
-    .icon-safe { background: #16a085; } /* اخضر لوسايس - المناطق الآمنة */
-    .icon-trusted { background: #8e44ad; } /* بنفسجي - اللاعب المعتمد */
-    .icon-rules { background: #3498db; } /* ازرق - القوانين العامة */
-    .icon-chase { background: #d35400; } /* برتقالي - المطاردات */
-    .icon-journal { background: #2c3e50; } /* رمادي غامق - الجريدة */
-    .icon-apply { background: #c0392b; } /* احمر - شروط القبول */
+    .btn-discord:hover { background: #fff; transform: translateY(-3px); }
 
-    .card h3 { 
-        margin: 0; 
-        font-size: 20px; 
-        color: #fff; 
-        margin-bottom: 10px;
+    /* قسم المميزات (التجربة الفريدة) */
+    .features-section { padding: 80px 8%; text-align: center; background: #0d0d0d; }
+    .features-section h2 { font-size: 32px; margin-bottom: 40px; }
+    .features-grid { 
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; 
     }
-    
-    .card p { 
-        margin: 0; 
-        font-size: 14px; 
-        color: rgba(255,255,255,0.6); 
-        line-height: 1.6;
+    .f-card {
+        background: rgba(255,255,255,0.03); border: 1px solid rgba(212, 175, 55, 0.1);
+        padding: 40px; border-radius: 10px; transition: 0.3s;
     }
-    
-    .footer-section { 
-        text-align: center; 
-        margin-top: 60px; 
-        padding-top: 30px; 
-        border-top: 1px solid rgba(255,255,255,0.05);
+    .f-card:hover { border-color: #d4af37; background: rgba(212, 175, 55, 0.05); transform: translateY(-10px); }
+    .f-card i { font-size: 40px; color: #d4af37; margin-bottom: 20px; display: block; }
+    .f-card h3 { margin-bottom: 15px; font-size: 22px; }
+    .f-card p { color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.6; }
+
+    /* قسم القوانين (البطاقات الملونة) */
+    .laws-section { padding: 80px 8%; background: #0b0b0b; }
+    .laws-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .law-card {
+        background: #151515; border-radius: 12px; padding: 25px; position: relative;
+        overflow: hidden; cursor: pointer; transition: 0.3s; border: 1px solid #222;
+        text-decoration: none; color: #fff; display: block;
     }
-    
-    .footer-buttons { 
-        display: flex; 
-        justify-content: center; 
-        gap: 15px; 
-        flex-wrap: wrap; 
-        margin-bottom: 20px; 
+    .law-card:hover { transform: scale(1.02); background: #1a1a1a; }
+    .law-icon { 
+        width: 45px; height: 45px; border-radius: 8px; display: flex; 
+        align-items: center; justify-content: center; font-size: 20px; margin-bottom: 15px;
     }
-    
-    .server-invite { 
-        display: inline-block; 
-        background: #e74c3c; 
-        color: white; 
-        padding: 12px 30px; 
-        text-decoration: none; 
-        border-radius: 50px; 
-        font-weight: bold; 
-        font-size: 16px; 
-        transition: 0.3s; 
-        box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); 
-    }
-    .server-invite:hover { transform: translateY(-3px); background: #ff5e4d; }
-    
-    .fivem-invite { 
-        display: inline-block; 
-        background: #f39c12; 
-        color: white; 
-        padding: 12px 30px; 
-        text-decoration: none; 
-        border-radius: 50px; 
-        font-weight: bold; 
-        font-size: 16px; 
-        transition: 0.3s; 
-        box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3); 
-    }
-    .fivem-invite:hover { transform: translateY(-3px); background: #f1c40f; }
-    
-    .copyright-text { 
-        font-size: 14px; 
-        color: rgba(255,255,255,0.4); 
-    }
-    
+    .law-card h4 { margin: 0 0 8px 0; font-size: 18px; }
+    .law-card p { margin: 0; font-size: 13px; color: #888; }
+
+    /* ألوان أيقونات القوانين */
+    .bg-blue { background: #3498db; }
+    .bg-green { background: #2ecc71; }
+    .bg-red { background: #e74c3c; }
+    .bg-purple { background: #9b59b6; }
+    .bg-orange { background: #f39c12; }
+
+    footer { padding: 40px; text-align: center; border-top: 1px solid #222; color: #555; font-size: 14px; }
 </style>
 `;
 
-const bgImage = 'https://cdn.discordapp.com/attachments/1478519443968753695/1478522145469370570/fca6a48587bf24ac.png?ex=69ee940d&is=69ed428d&hm=2011367125827fa11fa218fce0611a2626d1676fb461a6d241c4f54fae62e715&';
-
-const renderPage = (title, content, activePage) => `
+const renderLayout = (content) => `
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${title} - مقاطعة سبارك</title>
+    <title>مقاطعة سبارك - رول بلاي</title>
     ${styles}
 </head>
 <body>
     <nav class="navbar">
-        <a href="/" class="${activePage === 'index' ? 'active' : ''}">الرئيسية</a>
-        <a href="/safe" class="${activePage === 'safe' ? 'active' : ''}">المناطق الآمنة</a>
-        <a href="/trusted" class="${activePage === 'trusted' ? 'active' : ''}">اللاعب المعتمد</a>
-        <a href="/trusted-apply" class="${activePage === 'trustedApply' ? 'active' : ''}">شروط القبول والرتب</a>
-    </nav>
-    <div class="container">
-        <h1>${title} - مقاطعة سبارك</h1>
-        ${content}
-        <div class="footer-section">
-            <div class="footer-buttons">
-                <a href="fivem://connect/cfx.re/join/p9bd35" class="fivem-invite">دخول المدينة</a>
-                <a href="https://discord.gg/sp10" class="server-invite" target="_blank">ديسكورد مقاطعة سبارك</a>
-            </div>
-            <span class="copyright-text">جميع الحقوق محفوظة لمقاطعة سبارك</span>
+        <div class="logo">
+            <img src="https://ragerg.com/assets/logo.png" width="40" alt="" onerror="this.style.display='none'"> 
+            مقاطعة سبارك
         </div>
-    </div>
+        <div class="nav-links">
+            <a href="/">الرئيسية</a>
+            <a href="#laws">القوانين</a>
+            <a href="/trusted">الوظائف</a>
+            <a href="#">متجر سبارك</a>
+        </div>
+    </nav>
+
+    ${content}
+
+    <footer>جميع الحقوق محفوظة لمقاطعة سبارك &copy; 2026</footer>
 </body>
 </html>
 `;
 
-// الصفحة الرئيسية (شبكة البطاقات)
+// الصفحة الرئيسية
 app.get('/', (req, res) => {
-    const content = `
-        <p style="text-align:center; color: rgba(255,255,255,0.7); margin-bottom: 40px;">اطلع على جميع القوانين والأنظمة المعمول بها في السيرفر.</p>
-        <div class="cards-grid">
-            <div class="card" onclick="window.location.href='/safe'">
-                <div class="card-icon icon-safe">🛡️</div>
-                <h3>المناطق الآمنة</h3>
-                <p>القواعد الأساسية والأماكن التي يمنع فيها أي عمل غير قانوني.</p>
+    const homeContent = `
+    <section class="hero">
+        <h1>مرحباً بك في رول بلاي مقاطعة سبارك</h1>
+        <p>انضم إلى مجتمعنا واستمتع بتجربة واقعية فريدة في مدينة افتراضية متكاملة الخدمات والأنظمة.</p>
+        <a href="https://discord.gg/sp10" class="btn-discord">انضم الآن عبر Discord</a>
+    </section>
+
+    <section class="features-section">
+        <p style="color: #d4af37; font-weight: bold; margin-bottom: 10px;">نحن نوفر لك أفضل تجربة</p>
+        <h2>تجربتنا الفريدة</h2>
+        <div class="features-grid">
+            <div class="f-card">
+                <i>💼</i>
+                <h3>وظائف متنوعة</h3>
+                <p>اختر من بين وظائف حكومية وخاصة، من الشرطة والإسعاف إلى الميكانيك والتجارة.</p>
             </div>
-            
-            <div class="card" onclick="window.location.href='/trusted'">
-                <div class="card-icon icon-trusted">🤝</div>
-                <h3>اللاعب المعتمد</h3>
-                <p>قوانين ومهام اللاعبين الحاصلين على صفة "معتمد".</p>
+            <div class="f-card">
+                <i>🛡️</i>
+                <h3>نظام أمني متطور</h3>
+                <p>قوانين واضحة وإدارة فاعلة تضمن لك بيئة لعب عادلة وممتعة للجميع.</p>
             </div>
-            
-            <div class="card" onclick="window.location.href='/trusted-apply'">
-                <div class="card-icon icon-apply">📋</div>
-                <h3>شروط قبول المعتمد</h3>
-                <p>المتطلبات، الرتب، وكيفية التقديم للحصول على الاعتماد.</p>
-            </div>
-            
-            <div class="card">
-                <div class="card-icon icon-rules">📜</div>
-                <h3>القوانين العامة</h3>
-                <p>قريباً - القواعد الأساسية للعب والتمثيل داخل المدينة.</p>
+            <div class="f-card">
+                <i>👥</i>
+                <h3>مجتمع نشط</h3>
+                <p>انضم إلى مجتمع عربي متفاعل، كون صداقات جديدة وابدأ قصتك الخاصة.</p>
             </div>
         </div>
-    `;
-    res.send(renderPage('الرئيسية', content, 'index'));
-});
+    </section>
 
-// اللاعب المعتمد
-app.get('/trusted', (req, res) => {
-    const content = `
-        <div class="info-box">
-            <strong>تعريف اللاعب المعتمد:</strong> هو لاعب يحق له الانتداب في أكثر من وظيفة لسد العجز في الوظيفة المنتدب إليها مع الحفاظ على الرتب والترقيات الخاصة بكل وظيفة والتغيير بين الوظائف بشكل دوري ومستمر.
+    <section id="laws" class="laws-section">
+        <h2 style="text-align: center; margin-bottom: 40px;">قوانين المقاطعة</h2>
+        <div class="laws-grid">
+            <a href="/safe" class="law-card">
+                <div class="law-icon bg-blue">🛡️</div>
+                <h4>قوانين السيرفر</h4>
+                <p>القوانين العامة لمقاطعة سبارك</p>
+            </a>
+            <a href="/safe" class="law-card">
+                <div class="law-icon bg-green">⚖️</div>
+                <h4>قوانين مقاطعة سبارك العامة</h4>
+                <p>القواعد الأساسية للعب في المقاطعة</p>
+            </a>
+            <a href="/safe" class="law-card">
+                <div class="law-icon bg-purple">💰</div>
+                <h4>قوانين اقتصادية وعقارية</h4>
+                <p>قوانين التعاملات المالية والعقارات</p>
+            </a>
+            <a href="/safe" class="law-card">
+                <div class="law-icon bg-orange">🚔</div>
+                <h4>قوانين الأمن العام</h4>
+                <p>قوانين وإجراءات رجال الأمن</p>
+            </a>
+            <a href="/safe" class="law-card">
+                <div class="law-icon bg-red">🚗</div>
+                <h4>قوانين المركبات</h4>
+                <p>قوانين استخدام المركبات والقصص</p>
+            </a>
         </div>
-        <h2>قوانين اللاعب المعتمد</h2>
-        <ul class="law-list" style="list-style: none; padding: 0;">
-            <li style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-bottom: 10px; border-right: 4px solid #e74c3c;">1. حسن السمعة ولبق في تعاملك وأسلوبك مع اللاعبين.</li>
-            <li style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-bottom: 10px; border-right: 4px solid #e74c3c;">2. التقديم على وظيفتين معتمدتين على الأقل والتغيير بينهما بشكل دوري والحرص على تطوير نفسك ومساندة زملائك.</li>
-            <li style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-bottom: 10px; border-right: 4px solid #e74c3c;">3. مساعدة اللاعبين في الديسكورد بشكل عام.</li>
-            <li style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-bottom: 10px; border-right: 4px solid #e74c3c;">4. التمثيل بشكل جيد والالتزام بالتمثيل الواقعي الخاص بمقاطعة سبارك.</li>
-            <li style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-bottom: 10px; border-right: 4px solid #e74c3c;">5. مساندة الوظائف المعتمدة الأخرى عند الضرورة.</li>
-        </ul>
-        <div class="info-box" style="border-color: #f1c40f; color: #f1c40f; margin-top: 20px;">
-            ملاحظة: يحق لإدارة الرقابة والتفتيش سحب الاعتماد في حال مخالفة القوانين، ويجب التدرج في رتب الوظيفة المنتدب إليها.
-        </div>`;
-    res.send(renderPage('قوانين اللاعب المعتمد', content, 'trusted'));
-});
-
-// شروط القبول والرتب
-app.get('/trusted-apply', (req, res) => {
-    const content = `
-        <h2>🟢 شروط القبول في اللاعب المعتمد 🟢</h2>
-        <ul class="law-list" style="list-style: none; padding: 0;">
-            <li style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-bottom: 10px; border-right: 4px solid #e74c3c;">1. عدم وجود مخالفات رقابية في آخر 30 يوم.</li>
-            <li style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-bottom: 10px; border-right: 4px solid #e74c3c;">2. أن يكون المتقدم متفرغاً لمهام اللاعب المعتمد بشكل عام.</li>
-            <li style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-bottom: 10px; border-right: 4px solid #e74c3c;">3. يجب على المتقدم أن يتواجد في وظيفة معتمدة فعلياً.</li>
-            <li style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-bottom: 10px; border-right: 4px solid #e74c3c;">4. خبرة المتقدم 36 فما فوق.</li>
-            <li style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-bottom: 10px; border-right: 4px solid #e74c3c;">5. التقيد بالانتداب الأسبوعي لجميع الوظائف (مدة من يوم إلى 7 أيام).</li>
-        </ul>
-        <div style="text-align:center; color:#f1c40f; margin-top:30px;">يتم التقديم عبر تذكرة (Ticket) خاصة بالديسكورد.</div>
+    </section>
     `;
-    res.send(renderPage('شروط قبول المعتمد', content, 'trustedApply'));
+    res.send(renderLayout(homeContent));
 });
 
-// المناطق الآمنة (تم دمج تعديلك)
+// صفحة القوانين الفرعية (مثال للمناطق الآمنة)
 app.get('/safe', (req, res) => {
-    const content = `
-        <h2>المناطق الآمنة</h2>
-        <ul class="law-list" style="list-style: none; padding: 0;">
-            <li style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-bottom: 10px; border-right: 4px solid #16a085;">1 - المستشفيات ومراكز الشرطة وحرس الحدود</li>
-            <li style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-bottom: 10px; border-right: 4px solid #16a085;">2 - معرض المركبات والشاحنات</li>
-            <li style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-bottom: 10px; border-right: 4px solid #16a085;">3 - حجز المركبات والشاحنات</li>
-            <li style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-bottom: 10px; border-right: 4px solid #16a085;">4 - مركز التوظيف ومكان استخراج الرخص - مناطق العمل القانونية</li>
-            <li style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-bottom: 10px; border-right: 4px solid #16a085;">5 - مناطق العمل (الأخشاب - الدواجن - الأعناب الخ...)</li>
-        </ul>`;
-    res.send(renderPage('المناطق الآمنة', content, 'safe'));
+    const safeContent = `
+    <div style="padding: 150px 8% 80px; max-width: 900px; margin: 0 auto;">
+        <h1 style="color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px;">المناطق الآمنة</h1>
+        <ul style="list-style: none; padding: 0; margin-top: 30px;">
+            <li style="background: #1a1a1a; padding: 20px; border-radius: 8px; margin-bottom: 10px; border-right: 5px solid #3498db;">1 - المستشفيات ومراكز الشرطة وحرس الحدود</li>
+            <li style="background: #1a1a1a; padding: 20px; border-radius: 8px; margin-bottom: 10px; border-right: 5px solid #3498db;">2 - معرض المركبات والشاحنات</li>
+            <li style="background: #1a1a1a; padding: 20px; border-radius: 8px; margin-bottom: 10px; border-right: 5px solid #3498db;">3 - مناطق العمل القانونية ومركز التوظيف</li>
+        </ul>
+        <a href="/" style="display: inline-block; margin-top: 30px; color: #d4af37; text-decoration: none;">&larr; العودة للرئيسية</a>
+    </div>
+    `;
+    res.send(renderLayout(safeContent));
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => { console.log('Spark Server Ready!'); });
+app.listen(PORT, () => { console.log('Spark Web is Live!'); });
