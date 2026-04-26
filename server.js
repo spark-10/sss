@@ -296,7 +296,7 @@ app.get('/creators', (req, res) => {
         <h1 style="font-size: 45px; color: #d4af37; margin-bottom: 40px;">صناع المحتوى</h1>
         <div class="rule-card" onclick="openModal('creators-modal')" style="margin: auto;">
             <div class="icon-box" style="background-color: #e91e63;"><i class="fa-solid fa-video"></i></div>
-            <div><h3>قوانين البث وصناعة المحتوى</h3><p>الامتيازات والضوابط</p></div>
+            <div><h3>جار العمل</h3><p>sp10</p></div>
         </div>
         <div id="creators-modal" class="modal">
             <div class="modal-content">
