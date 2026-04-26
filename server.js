@@ -78,17 +78,17 @@ const layout = (content) => `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مقاطعة ريج</title>
+    <title>مقاطعة سبارك</title>
     ${STYLES}
 </head>
 <body>
     <nav class="navbar">
-        <a href="/" class="logo">مقاطعة سبارك </a>
+        <a href="/" class="logo">مقاطعة سبارك</a>
         <div class="nav-links">
             <a href="/">الرئيسية</a>
             <a href="/rules">القوانين</a>
             <a href="#">الوظائف</a>
-            <a href="#">متجر ريج</a>
+            <a href="#">متجر سبارك</a>
         </div>
     </nav>
     ${content}
@@ -100,20 +100,20 @@ const layout = (content) => `
 app.get('/', (req, res) => {
     const home = `
     <section class="hero">
-        <h1>مرحباً بك في مقاطعة سبارك </h1>
+        <h1>مرحباً بك في مقاطعة سبارك</h1>
         <p>عالم من الواقعية والاحترافية بانتظارك</p>
         <a href="https://discord.gg/sp10" class="btn-gold">انضم الآن عبر Discord</a>
     </section>
 
     <section class="about-box">
         <h2>من نحن</h2>
-        <p>نحن مجتمع رول بلاي متكامل يسعى لتقديم أفضل تجربة واقعية للاعب العربي. نتميز بأنظمة برمجية فريدة، إدارة عادلة، وبيئة لعب نظيفة تضمن لك الاستمتاع بكل لحظة تقضيها داخل المدينة.</p>
+        <p>نحن مجتمع رول بلاي متكامل يسعى لتقديم أفضل تجربة واقعية للاعب العربي في مقاطعة سبارك. نتميز بأنظمة برمجية فريدة، إدارة عادلة، وبيئة لعب نظيفة تضمن لك الاستمتاع بكل لحظة تقضيها داخل المدينة.</p>
     </section>
 
     <section class="experience-section">
         <h2>تجربتنا الفريدة</h2>
         <div class="grid">
-            <div class="card"><i>🛡️</i><h3>نظام أمني</h3><p>حماية متكاملة وقوانين صارمة لضمان جودة التمثيل.</p></div>
+            <div class="card"><i>🛡️</i><h3>نظام أمني</h3><p>حماية متكاملة وقوانين صارمة لضمان جودة التمثيل في سبارك.</p></div>
             <div class="card"><i>💼</i><h3>وظائف متنوعة</h3><p>أكثر من 20 وظيفة مختلفة بانتظارك لتبدأ مسيرتك.</p></div>
             <div class="card"><i>🤝</i><h3>مجتمع متفاعل</h3><p>الاف اللاعبين النشطين يومياً لخلق قصص لا تنسى.</p></div>
             <div class="card"><i>🚀</i><h3>تحديثات مستمرة</h3><p>نعمل دائماً على إضافة ميزات جديدة وحصرية للمدينة.</p></div>
@@ -129,11 +129,11 @@ app.get('/rules', (req, res) => {
     const rules = `
     <div style="padding: 100px 8%; text-align: center;">
         <h1 style="color: #d4af37;">قوانين مقاطعة سبارك</h1>
-        <p>هنا سيتم عرض كافة القوانين والأنظمة المعمول بها.</p>
+        <p>هنا سيتم عرض كافة القوانين والأنظمة المعمول بها داخل السيرفر.</p>
         <a href="/" style="color: #d4af37; text-decoration: none;">&larr; العودة للرئيسية</a>
     </div>
     `;
     res.send(layout(rules));
 });
 
-app.listen(3000, () => console.log('Rage Web is Running!'));
+app.listen(3000, () => console.log('Spark Web is Running!'));
