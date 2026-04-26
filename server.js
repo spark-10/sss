@@ -92,7 +92,7 @@ const layout = (content) => `
         </div>
     </nav>
     ${content}
-    <footer>جميع الحقوق محفوظة لمقاطعة ريج &copy; 2026</footer>
+    <footer>جميع الحقوق محفوظة لمقاطعة سبارك &copy; 2026</footer>
 </body>
 </html>
 `;
@@ -100,7 +100,7 @@ const layout = (content) => `
 app.get('/', (req, res) => {
     const home = `
     <section class="hero">
-        <h1>مرحباً بك في مقاطعة ريج</h1>
+        <h1>مرحباً بك في مقاطعةسبارك </h1>
         <p>عالم من الواقعية والاحترافية بانتظارك</p>
         <a href="https://discord.gg/sp10" class="btn-gold">انضم الآن عبر Discord</a>
     </section>
@@ -128,7 +128,7 @@ app.get('/', (req, res) => {
 app.get('/rules', (req, res) => {
     const rules = `
     <div style="padding: 100px 8%; text-align: center;">
-        <h1 style="color: #d4af37;">قوانين مقاطعة ريج</h1>
+        <h1 style="color: #d4af37;">قوانين مقاطعة سبارك</h1>
         <p>هنا سيتم عرض كافة القوانين والأنظمة المعمول بها.</p>
         <a href="/" style="color: #d4af37; text-decoration: none;">&larr; العودة للرئيسية</a>
     </div>
