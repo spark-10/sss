@@ -32,9 +32,10 @@ const STYLES = `
 
     .content-area { padding: 40px 8%; text-align: center; }
     
-    .btn-main { padding: 15px 35px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px; transition: 0.3s; min-width: 220px; display: inline-block; cursor: pointer; }
+    .btn-main { padding: 15px 35px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px; transition: 0.3s; min-width: 220px; display: inline-block; cursor: pointer; border: none; }
     .btn-discord { background: #5865F2; color: #fff; border: 2px solid #5865F2; margin: 10px; }
     .btn-cfx-main { background: #d4af37; color: #000; border: 2px solid #d4af37; margin: 10px; }
+    .btn-cfx-main:hover { background: #fff; border-color: #fff; }
 
     .cards-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px; }
 
@@ -58,7 +59,6 @@ const STYLES = `
     .rules-list li { background: rgba(255,255,255,0.02); margin: 10px 0; padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); line-height: 1.7; color: #ddd; }
 
     .highlight-box { background: rgba(212,175,55,0.1); padding: 20px; border-right: 5px solid #d4af37; border-radius: 8px; margin-bottom: 25px; font-size: 17px; line-height: 1.8; }
-    .note-box { color: #ffab00; background: rgba(255, 171, 0, 0.1); padding: 20px; border-radius: 10px; font-size: 15px; margin-top: 20px; border: 1px dashed #ffab00; line-height: 1.8; }
     .danger-box { color: #ff4c4c; background: rgba(255, 76, 76, 0.1); padding: 20px; border-radius: 10px; font-size: 15px; margin-top: 20px; border: 1px dashed #ff4c4c; line-height: 1.8; }
 
     .grid-rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 20px; }
@@ -116,14 +116,17 @@ app.get('/', (req, res) => {
             </div>
         </section>
 
-        <div style="background: rgba(20,20,20,0.8); padding: 40px; border-radius: 15px; max-width: 900px; margin: 40px auto; border: 1px solid rgba(212,175,55,0.2);">
-            <h2 style="color: #d4af37;">نبذة عن مقاطعة سبارك</h2>
-            <p style="line-height: 1.9; font-size: 18px;">نحن نقدم تجربة رول بلاي فريدة من نوعها، تجمع بين الواقعية والاحترافية. سيرفر سبارك مبني على سكربتات حصرية وإدارة واعية لضمان أفضل بيئة لعب ممكنة.</p>
+        <div style="background: rgba(20,20,20,0.8); padding: 50px 40px; border-radius: 15px; max-width: 900px; margin: 40px auto; border: 1px solid rgba(212,175,55,0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <h2 style="color: #d4af37; font-size: 32px; margin-bottom: 20px;">تجربتنا الفريدة</h2>
+            <p style="line-height: 2; font-size: 19px; color: #e0e0e0; margin-bottom: 30px;">
+                نحن نقدم تجربة رول بلاي فريدة من نوعها، تجمع بين الواقعية والاحترافية. سيرفر سبارك مبني على سكربتات حصرية وإدارة واعية لضمان أفضل بيئة لعب ممكنة، حيث نهتم بأدق التفاصيل لنمنحك حياة افتراضية متكاملة.
+            </p>
+            <a href="/rules" class="btn-main btn-cfx-main" style="min-width: 200px;">اطلع على القوانين</a>
         </div>
     `));
 });
 
-// القوانين
+// القوانين مع كل المودلز كاملة
 app.get('/rules', (req, res) => {
     res.send(layout(`
         <h1 style="font-size: 45px; color: #d4af37; margin-bottom: 10px;">قوانين مقاطعة سبارك</h1>
@@ -134,61 +137,33 @@ app.get('/rules', (req, res) => {
                 <div class="icon-box" style="background-color: #4CAF50;"><i class="fa-solid fa-scale-balanced"></i></div>
                 <div><h3 style="margin: 0; color: #fff;">القوانين العامة</h3><p style="color: #999; font-size: 14px; margin-top: 5px;">قوانين اللعب والقيادة</p></div>
             </div>
-
             <div class="rule-card" onclick="openModal('safezones-modal')">
                 <div class="icon-box" style="background-color: #009688;"><i class="fa-solid fa-shield-heart"></i></div>
                 <div><h3 style="margin: 0; color: #fff;">المناطق الآمنة</h3><p style="color: #999; font-size: 14px; margin-top: 5px;">الأماكن المحمية في المقاطعة</p></div>
             </div>
-
             <div class="rule-card" onclick="openModal('crime-modal')">
                 <div class="icon-box" style="background-color: #f44336;"><i class="fa-solid fa-mask"></i></div>
                 <div><h3 style="margin: 0; color: #fff;">قوانين الإجرام</h3><p style="color: #999; font-size: 14px; margin-top: 5px;">الرهائن والاعتداءات</p></div>
             </div>
-
             <div class="rule-card" onclick="openModal('robbery-modal')">
                 <div class="icon-box" style="background-color: #ff9800;"><i class="fa-solid fa-sack-dollar"></i></div>
                 <div><h3 style="margin: 0; color: #fff;">أعداد السرقات</h3><p style="color: #999; font-size: 14px; margin-top: 5px;">الأعداد المسموحة للبنوك</p></div>
             </div>
-
             <div class="rule-card" onclick="openModal('police-modal')">
                 <div class="icon-box" style="background-color: #2196F3;"><i class="fa-solid fa-building-shield"></i></div>
                 <div><h3 style="margin: 0; color: #fff;">الأمن العام</h3><p style="color: #999; font-size: 14px; margin-top: 5px;">الصلاحيات والمطاردات</p></div>
             </div>
-
             <div class="rule-card" onclick="openModal('border-modal')">
                 <div class="icon-box" style="background-color: #00bcd4;"><i class="fa-solid fa-ship"></i></div>
                 <div><h3 style="margin: 0; color: #fff;">حرس الحدود</h3><p style="color: #999; font-size: 14px; margin-top: 5px;">قوانين الميناء</p></div>
             </div>
-
             <div class="rule-card" onclick="openModal('smuggling-modal')">
                 <div class="icon-box" style="background-color: #9c27b0;"><i class="fa-solid fa-box-open"></i></div>
                 <div><h3 style="margin: 0; color: #fff;">التهريب</h3><p style="color: #999; font-size: 14px; margin-top: 5px;">الهروب والاشتباك</p></div>
             </div>
-
             <div class="rule-card" onclick="openModal('mechanic-modal')">
                 <div class="icon-box" style="background-color: #ff5722;"><i class="fa-solid fa-wrench"></i></div>
                 <div><h3 style="margin: 0; color: #fff;">الميكانيك</h3><p style="color: #999; font-size: 14px; margin-top: 5px;">كراج التزويد والعمل</p></div>
-            </div>
-        </div>
-
-        <div id="safezones-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn" onclick="closeModal('safezones-modal')">&times;</span>
-                <h2>خريطة المناطق الآمنة (Safe Zones)</h2>
-                <div class="highlight-box">يمنع منعاً باتاً القيام بأي عمل إجرامي، إطلاق نار، خطف، أو تهديد داخل هذه النطاقات.</div>
-                <div class="grid-rules">
-                    <div class="grid-item"><i class="fa-solid fa-hospital"></i><br>المستشفيات</div>
-                    <div class="grid-item"><i class="fa-solid fa-shield-halved"></i><br>مراكز الشرطة</div>
-                    <div class="grid-item"><i class="fa-solid fa-building-user"></i><br>أمن المنشآت</div>
-                    <div class="grid-item"><i class="fa-solid fa-car"></i><br>معرض المركبات</div>
-                    <div class="grid-item"><i class="fa-solid fa-truck"></i><br>معرض الشاحنات</div>
-                    <div class="grid-item"><i class="fa-solid fa-id-card"></i><br>مركز التوظيف</div>
-                    <div class="grid-item"><i class="fa-solid fa-file-contract"></i><br>أماكن استخراج الرخص</div>
-                    <div class="grid-item"><i class="fa-solid fa-warehouse"></i><br>حجز المركبات</div>
-                    <div class="grid-item"><i class="fa-solid fa-tree"></i><br>مناطق الأخشاب</div>
-                    <div class="grid-item"><i class="fa-solid fa-egg"></i><br>مناطق الدواجن</div>
-                    <div class="grid-item"><i class="fa-solid fa-seedling"></i><br>مناطق الأعناب</div>
-                </div>
             </div>
         </div>
 
@@ -200,13 +175,26 @@ app.get('/rules', (req, res) => {
                 <ul class="rules-list">
                     <li>1. اسم الهوية يجب أن يكون واقعياً (أول وثاني) وباللغة العربية أو الانجليزية.</li>
                     <li>2. يمنع طلب المطاردة أو الترصد للعساكر بدون سبب مقنع.</li>
-                    <li>3. التواصل داخل المنطقة عبر موجة الراديو فقط، ويمنع استخدام الديسكورد للتواصل أثناء اللعب (MetaGaming).</li>
-                    <li>4. يمنع السب والقذف والشتم بجميع أنواعه .</li>
+                    <li>3. التواصل داخل المنطقة عبر موجة الراديو فقط، ويمنع استخدام الديسكورد للتواصل (MetaGaming).</li>
+                    <li>4. يمنع السب والقذف والشتم بجميع أنواعه.</li>
                     <li>5. يمنع استعمال الراديو في حال تقييد اليدين أو الغوص تحت الماء.</li>
                     <li>6. يمنع سرقة مركبات الوظائف المعتمدة (إسعاف، شرطة، ميكانيك).</li>
-                    <li>7. الالتزام بالتمثيل الواقعي والاحترافي شرط أساسي للاستمرار في المقاطعة.</li>
-                    <li>8. يمنع إطلاق النار بوجود الهلال الأحمر في الموقع.</li>
+                    <li>7. الالتزام بالتمثيل الواقعي والاحترافي شرط أساسي.</li>
                 </ul>
+            </div>
+        </div>
+
+        <div id="safezones-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('safezones-modal')">&times;</span>
+                <h2>المناطق الآمنة</h2>
+                <div class="grid-rules">
+                    <div class="grid-item"><i class="fa-solid fa-hospital"></i><br>المستشفيات</div>
+                    <div class="grid-item"><i class="fa-solid fa-shield-halved"></i><br>مراكز الشرطة</div>
+                    <div class="grid-item"><i class="fa-solid fa-building-user"></i><br>أمن المنشآت</div>
+                    <div class="grid-item"><i class="fa-solid fa-car"></i><br>معرض المركبات</div>
+                    <div class="grid-item"><i class="fa-solid fa-warehouse"></i><br>حجز المركبات</div>
+                </div>
             </div>
         </div>
 
@@ -215,12 +203,10 @@ app.get('/rules', (req, res) => {
                 <span class="close-btn" onclick="closeModal('crime-modal')">&times;</span>
                 <h2>دستور الإجرام</h2>
                 <ul class="rules-list">
-                    <li>القاعدة 1: تمثيل الحياة الواقعية سواء كنت مجرمًا أو رهينة (قيمة حياتك أهم شيء).</li>
-                    <li>القاعدة 2: يمنع الاتفاق المسبق مع الرهينة (رهينة صديق).</li>
-                    <li>القاعدة 3: يمنع طلب عسكري أو مسعف عبر الجهاز بغرض الخطف.</li>
-                    <li>القاعدة 4: يمنع المتاجرة بالممنوعات أو النصب داخل المناطق الآمنة.</li>
-                    <li>القاعدة 5: يمنع مقاومة السلاح الناري بسلاح أبيض إذا كان موجهاً إليك.</li>
-                    <li>القاعدة 6: يمنع تقليد ملابس الأمن أو استخدام رتبهم العسكرية.</li>
+                    <li>القاعدة 1: تمثيل الحياة الواقعية وقيمة حياتك أهم شيء.</li>
+                    <li>القاعدة 2: يمنع الاتفاق المسبق مع الرهينة.</li>
+                    <li>القاعدة 3: يمنع طلب عسكري أو مسعف بغرض الخطف.</li>
+                    <li>القاعدة 4: يمنع المتاجرة بالممنوعات داخل المناطق الآمنة.</li>
                 </ul>
             </div>
         </div>
@@ -230,67 +216,21 @@ app.get('/rules', (req, res) => {
                 <span class="close-btn" onclick="closeModal('robbery-modal')">&times;</span>
                 <h2>توزيع أعداد السرقات</h2>
                 <div class="grid-rules">
-                    <div class="grid-item"><i class="fa-solid fa-building-columns"></i><br>البنك المركزي<br>4-6 مجرمين | 10 أمن</div>
-                    <div class="grid-item"><i class="fa-solid fa-vault"></i><br>بنك ميز<br>2-4 مجرمين | 7 أمن</div>
-                    <div class="grid-item"><i class="fa-solid fa-shop"></i><br>المتاجر<br>1-3 مجرمين | 4 أمن</div>
-                    <div class="grid-item"><i class="fa-solid fa-gem"></i><br>المجوهرات<br>2-4 مجرمين | 6 أمن</div>
-                    <div class="grid-item"><i class="fa-solid fa-box"></i><br>شحنة الأسلحة<br>3-5 مجرمين | 8 أمن</div>
+                    <div class="grid-item">البنك المركزي<br>4-6 مجرمين | 10 أمن</div>
+                    <div class="grid-item">بنك ميز<br>2-4 مجرمين | 7 أمن</div>
+                    <div class="grid-item">المتاجر<br>1-3 مجرمين | 4 أمن</div>
                 </div>
             </div>
         </div>
 
-        <div id="police-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn" onclick="closeModal('police-modal')">&times;</span>
-                <h2>لوائح الأمن العام</h2>
-                <ul class="rules-list">
-                    <li>1. يحق للأمن تفتيش أي شخص مشتبه به في المناطق المشبوهة.</li>
-                    <li>2. يمنع استخدام القوة المميتة إلا في حال تعرض حياة العسكري أو المواطن للخطر.</li>
-                    <li>3. الالتزام بالرتب العسكرية والتعليمات الصادرة من القيادة.</li>
-                    <li>4. يمنع التخريب على الزملاء أو تسريب معلومات العمل.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="border-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn" onclick="closeModal('border-modal')">&times;</span>
-                <h2>قوانين حرس الحدود</h2>
-                <ul class="rules-list">
-                    <li>1. منطقة الميناء منطقة عسكرية تخضع لتفتيش دقيق.</li>
-                    <li>2. يمنع دخول القوارب غير المصرح لها لنطاق الحجز.</li>
-                    <li>3. التعامل مع المهربين يكون بحزم وفق لوائح الاشتباك.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="smuggling-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn" onclick="closeModal('smuggling-modal')">&times;</span>
-                <h2>قوانين التهريب</h2>
-                <ul class="rules-list">
-                    <li>1. يمنع الهروب سباحة لمسافات طويلة، يجب استخدام قارب.</li>
-                    <li>2. يمنع استخدام سيارات "سوبر" داخل طرق الميناء الوعرة.</li>
-                    <li>3. الاشتباك يبدأ بعد التحذير الرسمي من قبل الأمن.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="mechanic-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn" onclick="closeModal('mechanic-modal')">&times;</span>
-                <h2>لوائح الميكانيك</h2>
-                <ul class="rules-list">
-                    <li>1. أوقات العمل الرسمية لكراج التزويد من 9 صباحاً حتى 10 مساءً.</li>
-                    <li>2. يمنع القيام بأعمال إجرامية أثناء ارتداء لبس الوظيفة.</li>
-                    <li>3. يمنع تزويد سيارات الأمن أو الإسعاف خارج النطاق المخصص.</li>
-                </ul>
-            </div>
-        </div>
+        <div id="police-modal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('police-modal')">&times;</span><h2>لوائح الأمن العام</h2><ul class="rules-list"><li>1. يحق للأمن تفتيش أي شخص مشتبه به.</li><li>2. يمنع استخدام القوة المميتة إلا للخطر المحقق.</li></ul></div></div>
+        <div id="border-modal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('border-modal')">&times;</span><h2>قوانين حرس الحدود</h2><ul class="rules-list"><li>1. منطقة الميناء منطقة عسكرية تخضع للتفتيش.</li></ul></div></div>
+        <div id="smuggling-modal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('smuggling-modal')">&times;</span><h2>قوانين التهريب</h2><ul class="rules-list"><li>1. يمنع الهروب سباحة، يجب استخدام قارب.</li></ul></div></div>
+        <div id="mechanic-modal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('mechanic-modal')">&times;</span><h2>لوائح الميكانيك</h2><ul class="rules-list"><li>1. أوقات العمل من 9 ص حتى 10 م.</li></ul></div></div>
     `));
 });
 
-// صناع المحتوى
+// صناع المحتوى (رجعت)
 app.get('/creators', (req, res) => {
     res.send(layout(`
         <h1 style="font-size: 45px; color: #d4af37; margin-bottom: 40px;">صناع المحتوى</h1>
@@ -303,7 +243,7 @@ app.get('/creators', (req, res) => {
                 <span class="close-btn" onclick="closeModal('creators-modal')">&times;</span>
                 <h2>قوانين صناع المحتوى</h2>
                 <ul class="rules-list">
-                    <li>1. جار العمل
+                    <li>1. جار العمل على تفاصيل النظام.</li>
                 </ul>
             </div>
         </div>
