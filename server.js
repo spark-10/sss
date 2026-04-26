@@ -25,14 +25,12 @@ const STYLES = `
 
     .content-area { padding: 40px 8%; text-align: center; }
     
-    /* الهيرو مع الزرين */
     .hero { height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
     .hero h1 { font-size: 60px; margin-bottom: 15px; color: #d4af37; text-shadow: 0 0 30px rgba(212,175,55,0.4); }
     .hero p { font-size: 20px; margin-bottom: 30px; color: #eee; }
     
     .hero-btns { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
     
-    /* أزرار الهيرو */
     .btn-main {
         padding: 15px 35px; border-radius: 8px; text-decoration: none; font-weight: bold; 
         font-size: 18px; transition: 0.3s; min-width: 220px; text-align: center;
@@ -43,7 +41,6 @@ const STYLES = `
     .btn-cfx-main { background: #d4af37; color: #000; border: 2px solid #d4af37; }
     .btn-cfx-main:hover { background: transparent; color: #d4af37; transform: translateY(-5px); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4); }
 
-    /* بقية التنسيقات */
     .about-box {
         background: rgba(20, 20, 20, 0.85); border: 1px solid rgba(212, 175, 55, 0.2);
         padding: 40px; border-radius: 15px; margin: 40px auto; max-width: 900px;
@@ -56,6 +53,8 @@ const STYLES = `
     }
     .card:hover { border-color: #d4af37; transform: translateY(-10px); }
     .card i { font-size: 45px; color: #d4af37; margin-bottom: 20px; display: block; }
+    .card h3 { color: #fff; margin-bottom: 12px; }
+    .card p { color: #ccc; font-size: 15px; line-height: 1.6; }
 
     footer { padding: 40px; text-align: center; background: rgba(10,10,10,0.95); border-top: 1px solid #222; color: #777; }
 </style>
@@ -92,7 +91,7 @@ app.get('/', (req, res) => {
     res.send(layout(`
         <section class="hero">
             <h1>مقاطعة سبارك</h1>
-            <p>انطلق في رحلة واقعية لا تنتهي داخل عالمنا  </p>
+            <p>انطلق في رحلة واقعية لا تنتهي داخل عالمنا</p>
             <div class="hero-btns">
                 <a href="https://discord.gg/sp10" class="btn-main btn-discord" target="_blank">انضم إلى الديسكورد</a>
                 <a href="fivem://connect/cfx.re/join/p9bd35" class="btn-main btn-cfx-main">الدخول إلى المقاطعة</a>
@@ -104,18 +103,30 @@ app.get('/', (req, res) => {
             <p style="line-height: 1.9; font-size: 18px;">نحن نقدم تجربة رول بلاي فريدة من نوعها، تجمع بين الواقعية والاحترافية. سيرفر سبارك مبني على سكربتات حصرية وإدارة واعية لضمان أفضل بيئة لعب ممكنة.</p>
         </section>
 
-        <h2 style="margin-top: 60px;">مميزاتنا</h2>
+        <h2 style="margin-top: 60px;">تجربتنا الفريدة</h2>
         <div class="grid">
-            <div class="card"><i>🛡️</i><h3>حماية شاملة</h3><p>نظام أمان متقدم يضمن تجربة عادلة للجميع.</p></div>
-            <div class="card"><i>💼</i><h3>وظائف حقيقية</h3><p>تنوع كبير في الوظائف الحكومية والخاصة.</p></div>
-            <div class="card"><i>🚗</i><h3>مركبات حصرية</h3><p>سيارات واقعية بلمسات سبارك الخاصة.</p></div>
+            <div class="card">
+                <i>💼</i>
+                <h3>وظائف متنوعة</h3>
+                <p>اختر من بين وظائف حكومية وخاصة، من الشرطة والإسعاف إلى الميكانيك والتجارة.</p>
+            </div>
+            <div class="card">
+                <i>🛡️</i>
+                <h3>نظام العساكر المتطور</h3>
+                <p>لدينا نظام عسكري متطور من المركبات والمراكز الحكومية والملابس الحصرية.</p>
+            </div>
+            <div class="card">
+                <i>🤝</i>
+                <h3>مجتمع نشط</h3>
+                <p>لدينا طاقة إدارة متفاعلة {انضم إلى مجتمع عربي متفاعل ومتنوع}</p>
+            </div>
         </div>
     `));
 });
 
-// المسارات الإضافية
-app.get('/jobs', (req, res) => res.send(layout(`<h1 style="color:#d4af37;">الوضائف المتاحة</h1><div class="about-box"><p>جار العمل على قوانين مقاطعة سبارك .</p></div>`)));
-app.get('/store', (req, res) =>res.send(layout(`<h1 style="color:#d4af37;">متجر مقاطعة سبارك</h1><div class="about-box"><p>جار العمل على قوانين مقاطعة سبارك .</p></div>`)));
+// المسارات الإضافية (بدون تغيير)
+app.get('/jobs', (req, res) => res.send(layout(`<h1 style="color:#d4af37;">الوظائف المتاحة</h1><div class="about-box"><p>جار العمل على قوانين مقاطعة سبارك .</p></div>`)));
+app.get('/store', (req, res) => res.send(layout(`<h1 style="color:#d4af37;">متجر مقاطعة سبارك</h1><div class="about-box"><p>جار العمل على قوانين مقاطعة سبارك .</p></div>`)));
 app.get('/rules', (req, res) => res.send(layout(`<h1 style="color:#d4af37;">القوانين</h1><div class="about-box"><p>جار العمل على قوانين مقاطعة سبارك .</p></div>`)));
 
 app.listen(3000, () => console.log('Spark Web Updated!'));
