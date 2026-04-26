@@ -21,12 +21,29 @@ const STYLES = `
 
     .navbar { 
         display: flex; justify-content: space-between; align-items: center;
-        padding: 15px 8%; position: sticky; top: 0; width: 100%; z-index: 1000;
+        padding: 10px 8%; position: sticky; top: 0; width: 100%; z-index: 1000;
         background: rgba(10,10,10,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(212, 175, 55, 0.3);
     }
     .nav-links a { color: #fff; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 15px; transition: 0.3s; }
     .nav-links a:hover { color: #d4af37; }
-    .logo { font-size: 26px; font-weight: 900; color: #d4af37; text-decoration: none; }
+    
+    /* تنسيق اللوجو والنص بجانبه */
+    .logo { 
+        display: flex; 
+        align-items: center; 
+        gap: 12px; 
+        font-size: 26px; 
+        font-weight: 900; 
+        color: #d4af37; 
+        text-decoration: none; 
+    }
+    .logo img { 
+        height: 55px; 
+        width: 55px; 
+        border-radius: 50%; 
+        border: 1px solid rgba(212, 175, 55, 0.4);
+        object-fit: cover;
+    }
 
     .content-area { padding: 40px 8%; text-align: center; }
     
@@ -34,7 +51,6 @@ const STYLES = `
     .btn-discord { background: #5865F2; color: #fff; border: 2px solid #5865F2; margin: 10px; }
     .btn-cfx-main { background: #d4af37; color: #000; border: 2px solid #d4af37; margin: 10px; }
 
-    /* تنسيق البطاقات (نفس التصميم المطلوب) */
     .rule-card {
         background: rgba(22, 18, 15, 0.9); border: 1px solid rgba(212, 175, 55, 0.3);
         border-radius: 15px; padding: 30px; text-align: right; width: 450px;
@@ -43,7 +59,6 @@ const STYLES = `
     .rule-card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2); border-color: #d4af37; }
     .icon-box { width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: #fff; margin-left: 20px; flex-shrink: 0; }
 
-    /* Modal Styling */
     .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); backdrop-filter: blur(10px); }
     .modal-content { background: #0f0f0f; margin: 2% auto; padding: 40px; border: 1px solid #d4af37; border-radius: 15px; width: 90%; max-width: 1000px; max-height: 90vh; overflow-y: auto; text-align: right; position: relative; }
     .close-btn { color: #fff; position: absolute; left: 30px; top: 25px; font-size: 35px; cursor: pointer; transition: 0.3s; }
@@ -79,7 +94,10 @@ const layout = (content) => `
 </head>
 <body>
     <nav class="navbar">
-        <a href="/" class="logo">مقاطعة سبارك</a>
+        <a href="/" class="logo">
+            <img src="https://cdn.discordapp.com/attachments/1478519443968753695/1478522144328781986/727d7d25559b45a4.gif?ex=69ef3ccc&is=69edeb4c&hm=1f04178069920aa5617e35ad853d0cbab96678aa19e14111f2dfd2201f4247ac&" alt="Spark Logo">
+            <span>مقاطعة سبارك</span>
+        </a>
         <div class="nav-links">
             <a href="/">الرئيسية</a>
             <a href="/rules">القوانين</a>
