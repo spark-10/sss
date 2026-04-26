@@ -5,11 +5,10 @@ const STYLES = `
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
     
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
     body { 
         margin: 0; padding: 0; font-family: 'Cairo', sans-serif; color: #fff; direction: rtl; 
         background-color: #0b0b0b; overflow-x: hidden;
-        /* خلفيتك الخاصة - تأكد من الرابط */
         background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), 
                     url('https://cdn.discordapp.com/attachments/1478519443968753695/1478522145469370570/fca6a48587bf24ac.png?ex=69ee940d&is=69ed428d&hm=2011367125827fa11fa218fce0611a2626d1676fb461a6d241c4f54fae62e715&');
         background-size: cover; background-position: center; background-attachment: fixed;
@@ -25,50 +24,40 @@ const STYLES = `
     .nav-links a:hover { color: #d4af37; }
     .logo { font-size: 24px; font-weight: bold; color: #d4af37; text-decoration: none; }
 
-    .hero {
-        height: 60vh; display: flex; flex-direction: column; justify-content: center; 
-        align-items: center; text-align: center; padding: 0 20px;
-    }
+    /* الأقسام العامة */
+    .content-area { padding: 60px 8%; text-align: center; }
+    
+    /* الهيرو */
+    .hero { height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
     .hero h1 { font-size: 48px; margin-bottom: 10px; color: #d4af37; }
 
-    /* قسم النبذة */
-    .about-box {
-        background: rgba(20, 20, 20, 0.8); border: 1px solid rgba(212, 175, 55, 0.2);
-        padding: 40px; border-radius: 15px; margin: -50px auto 50px; max-width: 900px; text-align: center;
-    }
-    .about-box h2 { color: #d4af37; margin-bottom: 15px; font-size: 28px; }
-    .about-box p { line-height: 1.8; color: #ccc; font-size: 17px; }
-
-    /* قسم تجربتنا */
-    .experience-section { padding: 50px 8%; text-align: center; }
-    .experience-section h2 { font-size: 30px; margin-bottom: 40px; color: #fff; position: relative; }
-    .experience-section h2::after { content: ""; display: block; width: 60px; height: 3px; background: #d4af37; margin: 10px auto; }
-    
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 40px; }
+    /* البطاقات */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 40px 0; }
     .card {
-        background: rgba(25, 25, 25, 0.7); border: 1px solid rgba(255,255,255,0.05);
-        padding: 30px; border-radius: 12px; transition: 0.3s;
+        background: rgba(20, 20, 20, 0.85); border: 1px solid rgba(212, 175, 55, 0.15);
+        padding: 35px; border-radius: 15px; transition: 0.3s; text-align: center;
     }
-    .card:hover { border-color: #d4af37; transform: translateY(-5px); }
-    .card i { font-size: 35px; color: #d4af37; margin-bottom: 15px; display: block; }
-    .card h3 { font-size: 20px; margin-bottom: 10px; }
-    .card p { font-size: 14px; color: #aaa; }
+    .card:hover { border-color: #d4af37; transform: translateY(-10px); background: rgba(30, 30, 30, 0.95); }
+    .card i { font-size: 45px; color: #d4af37; margin-bottom: 20px; display: block; }
+    .card h3 { color: #fff; margin-bottom: 12px; font-size: 22px; }
+    .card p { color: #aaa; font-size: 15px; line-height: 1.6; }
 
-    /* أزرار الأكشن */
+    /* أزرار سبارك */
     .btn-gold {
-        background: #d4af37; color: #000; padding: 12px 35px; border-radius: 5px;
+        background: #d4af37; color: #000; padding: 14px 40px; border-radius: 8px;
         text-decoration: none; font-weight: bold; transition: 0.3s; display: inline-block;
     }
-    .btn-gold:hover { background: #fff; transform: scale(1.05); }
+    .btn-gold:hover { background: #fff; transform: scale(1.05); box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
 
-    .btn-outline {
-        border: 2px solid #d4af37; color: #d4af37; padding: 10px 30px; border-radius: 5px;
-        text-decoration: none; font-weight: bold; transition: 0.3s; display: inline-block;
-        margin-top: 20px;
+    /* قسم انضم الآن المطور */
+    .join-section {
+        background: rgba(10, 10, 10, 0.9); border: 2px solid #d4af37;
+        padding: 50px; border-radius: 20px; margin: 60px 0; text-align: center;
     }
-    .btn-outline:hover { background: #d4af37; color: #000; }
+    .join-section h2 { font-size: 35px; color: #fff; margin-bottom: 20px; }
+    .join-section span { color: #d4af37; }
 
-    footer { padding: 30px; text-align: center; background: rgba(10,10,10,0.9); border-top: 1px solid #222; color: #666; font-size: 13px; }
+    footer { padding: 40px; text-align: center; background: rgba(10,10,10,0.95); border-top: 1px solid #222; color: #777; font-size: 14px; }
 </style>
 `;
 
@@ -87,53 +76,86 @@ const layout = (content) => `
         <div class="nav-links">
             <a href="/">الرئيسية</a>
             <a href="/rules">القوانين</a>
-            <a href="#">الوظائف</a>
-            <a href="#">متجر سبارك</a>
+            <a href="/jobs">الوظائف</a>
+            <a href="/store">المتجر</a>
         </div>
     </nav>
-    ${content}
+    <div class="content-area">
+        ${content}
+        
+        <section class="join-section">
+            <h2>انضم الآن إلى <span>مقاطعة سبارك</span></h2>
+            <p style="color: #ccc; margin-bottom: 30px;">ابدأ رحلتك اليوم في أكبر تجمع رول بلاي واقعي</p>
+            <a href="https://discord.gg/sp10" class="btn-gold" target="_blank">دخول السيرفر (Discord)</a>
+        </section>
+    </div>
     <footer>جميع الحقوق محفوظة لمقاطعة سبارك &copy; 2026</footer>
 </body>
 </html>
 `;
 
+// الصفحة الرئيسية
 app.get('/', (req, res) => {
-    const home = `
-    <section class="hero">
-        <h1>مرحباً بك في مقاطعة سبارك</h1>
-        <p>عالم من الواقعية والاحترافية بانتظارك</p>
-        <a href="https://discord.gg/sp10" class="btn-gold" target="_blank">انضم الآن عبر Discord</a>
-    </section>
-
-    <section class="about-box">
-        <h2>من نحن</h2>
-        <p>نحن مجتمع رول بلاي متكامل يسعى لتقديم أفضل تجربة واقعية للاعب العربي في مقاطعة سبارك. نتميز بأنظمة برمجية فريدة، إدارة عادلة، وبيئة لعب نظيفة تضمن لك الاستمتاع بكل لحظة تقضيها داخل المدينة.</p>
-    </section>
-
-    <section class="experience-section">
-        <h2>تجربتنا الفريدة</h2>
-        <div class="grid">
-            <div class="card"><i>🛡️</i><h3>نظام أمني</h3><p>حماية متكاملة وقوانين صارمة لضمان جودة التمثيل في سبارك.</p></div>
-            <div class="card"><i>💼</i><h3>وظائف متنوعة</h3><p>أكثر من 20 وظيفة مختلفة بانتظارك لتبدأ مسيرتك.</p></div>
-            <div class="card"><i>🤝</i><h3>مجتمع متفاعل</h3><p>آلاف اللاعبين النشطين يومياً لخلق قصص لا تنسى.</p></div>
-            <div class="card"><i>🚀</i><h3>تحديثات مستمرة</h3><p>نعمل دائماً على إضافة ميزات جديدة وحصرية للمدينة.</p></div>
-        </div>
+    res.send(layout(`
+        <section class="hero">
+            <h1>مقاطعة سبارك</h1>
+            <p>التميز.. الواقعية.. والاحترافية</p>
+        </section>
         
-        <a href="/rules" class="btn-outline">اطلع على القوانين</a>
-    </section>
-    `;
-    res.send(layout(home));
+        <div style="background: rgba(20,20,20,0.7); padding: 40px; border-radius: 15px; border: 1px solid rgba(212,175,55,0.2);">
+            <h2 style="color: #d4af37;">من نحن</h2>
+            <p style="line-height: 1.8; font-size: 18px;">نحن في مقاطعة سبارك نسعى لتقديم تجربة لعب فريدة من نوعها، نجمع بين الواقعية المطلقة والترفيه اللامحدود تحت إدارة عربية محترفة.</p>
+        </div>
+
+        <h2 style="margin-top: 60px;">تجربتنا الفريدة</h2>
+        <div class="grid">
+            <div class="card"><i>🛡️</i><h3>حماية قوية</h3><p>أنظمة حماية متطورة لضمان لعب عادل لجميع سكان سبارك.</p></div>
+            <div class="card"><i>🚀</i><h3>أداء عالي</h3><p>سيرفراتنا تعمل بأحدث التقنيات لضمان عدم وجود "لاق".</p></div>
+            <div class="card"><i>💎</i><h3>حصريات</h3><p>سيارات وأنظمة برمجية خاصة بسبارك لن تجدها في مكان آخر.</p></div>
+        </div>
+        <a href="/rules" class="btn-gold" style="background: transparent; color: #d4af37; border: 2px solid #d4af37;">اطلع على القوانين</a>
+    `));
 });
 
+// صفحة الوظائف
+app.get('/jobs', (req, res) => {
+    res.send(layout(`
+        <h1 style="color: #d4af37;">الوظائف المتاحة</h1>
+        <p>اختر مسارك المهني في مقاطعة سبارك</p>
+        <div class="grid">
+            <div class="card"><i>🚔</i><h3>وزارة الداخلية</h3><p>انضم لحماية المدينة وفرض القانون.</p></div>
+            <div class="card"><i>🚑</i><h3>وزارة الصحة</h3><p>كن المنقذ وسارع لتقديم المساعدة الطبية.</p></div>
+            <div class="card"><i>🛠️</i><h3>الميكانيك</h3><p>قم بصيانة وتعديل أفخم السيارات في المدينة.</p></div>
+            <div class="card"><i>🏗️</i><h3>الأعمال الحرة</h3><p>من التجارة إلى المقاولات، ابنِ ثروتك الخاصة.</p></div>
+        </div>
+    `));
+});
+
+// صفحة المتجر
+app.get('/store', (req, res) => {
+    res.send(layout(`
+        <h1 style="color: #d4af37;">متجر سبارك</h1>
+        <p>احصل على مميزات حصرية لدعم تجربتك</p>
+        <div class="grid">
+            <div class="card"><i>🚗</i><h3>سيارات VIP</h3><p>مجموعة من السيارات النادرة والسريعة جداً.</p></div>
+            <div class="card"><i>🏠</i><h3>عقارات فاخرة</h3><p>قصور وشقق بتصاميم داخلية خرافية.</p></div>
+            <div class="card"><i>✨</i><h3>رتب خاصة</h3><p>رتب ديسكورد ومميزات داخل اللعبة للمانحين.</p></div>
+        </div>
+        <p style="color: #888;">* جميع المشتريات تذهب لدعم تطوير السيرفر</p>
+    `));
+});
+
+// صفحة القوانين
 app.get('/rules', (req, res) => {
-    const rules = `
-    <div style="padding: 100px 8%; text-align: center;">
-        <h1 style="color: #d4af37;">قوانين مقاطعة سبارك</h1>
-        <p>هنا سيتم عرض كافة القوانين والأنظمة المعمول بها داخل السيرفر.</p>
-        <a href="/" style="color: #d4af37; text-decoration: none;">&larr; العودة للرئيسية</a>
-    </div>
-    `;
-    res.send(layout(rules));
+    res.send(layout(`
+        <h1 style="color: #d4af37;">قوانين المدينة</h1>
+        <div class="card" style="max-width: 800px; margin: 40px auto; text-align: right;">
+            <p>1. يمنع منعا باتاً الخروج عن الرول بلاي.</p>
+            <p>2. الاحترام المتبادل بين جميع اللاعبين والإدارة.</p>
+            <p>3. يمنع استخدام أي ثغرات أو برامج غش.</p>
+            <p>4. الالتزام بقوانين المناطق الآمنة والمطاردات.</p>
+        </div>
+    `));
 });
 
-app.listen(3000, () => console.log('Spark Web is Running!'));
+app.listen(3000, () => console.log('Spark Web is FULL & Ready!'));
