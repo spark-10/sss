@@ -9,7 +9,7 @@ const STYLES = `
     body { 
         margin: 0; padding: 0; font-family: 'Cairo', sans-serif; color: #fff; direction: rtl; 
         background-color: #0b0b0b; overflow-x: hidden;
-        /* الخلفية الخاصة بك مع تثبيت وتعتيم احترافي */
+        /* خلفيتك الخاصة - تأكد من الرابط */
         background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), 
                     url('https://cdn.discordapp.com/attachments/1478519443968753695/1478522145469370570/fca6a48587bf24ac.png?ex=69ee940d&is=69ed428d&hm=2011367125827fa11fa218fce0611a2626d1676fb461a6d241c4f54fae62e715&');
         background-size: cover; background-position: center; background-attachment: fixed;
@@ -102,7 +102,7 @@ app.get('/', (req, res) => {
     <section class="hero">
         <h1>مرحباً بك في مقاطعة سبارك</h1>
         <p>عالم من الواقعية والاحترافية بانتظارك</p>
-        <a href="https://discord.gg/sp10" class="btn-gold">انضم الآن عبر Discord</a>
+        <a href="https://discord.gg/sp10" class="btn-gold" target="_blank">انضم الآن عبر Discord</a>
     </section>
 
     <section class="about-box">
@@ -115,7 +115,7 @@ app.get('/', (req, res) => {
         <div class="grid">
             <div class="card"><i>🛡️</i><h3>نظام أمني</h3><p>حماية متكاملة وقوانين صارمة لضمان جودة التمثيل في سبارك.</p></div>
             <div class="card"><i>💼</i><h3>وظائف متنوعة</h3><p>أكثر من 20 وظيفة مختلفة بانتظارك لتبدأ مسيرتك.</p></div>
-            <div class="card"><i>🤝</i><h3>مجتمع متفاعل</h3><p>الاف اللاعبين النشطين يومياً لخلق قصص لا تنسى.</p></div>
+            <div class="card"><i>🤝</i><h3>مجتمع متفاعل</h3><p>آلاف اللاعبين النشطين يومياً لخلق قصص لا تنسى.</p></div>
             <div class="card"><i>🚀</i><h3>تحديثات مستمرة</h3><p>نعمل دائماً على إضافة ميزات جديدة وحصرية للمدينة.</p></div>
         </div>
         
