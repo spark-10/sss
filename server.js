@@ -117,7 +117,7 @@ app.get('/', (req, res) => {
         </section>
 
         <div style="background: rgba(20,20,20,0.8); padding: 40px; border-radius: 15px; max-width: 900px; margin: 40px auto; border: 1px solid rgba(212,175,55,0.2);">
-            <h2 style="color: #d4af37;">عن مقاطعة سبارك</h2>
+            <h2 style="color: #d4af37;">نبذة عن مقاطعة سبارك</h2>
             <p style="line-height: 1.9; font-size: 18px;">نحن نقدم تجربة رول بلاي فريدة من نوعها، تجمع بين الواقعية والاحترافية. سيرفر سبارك مبني على سكربتات حصرية وإدارة واعية لضمان أفضل بيئة لعب ممكنة.</p>
         </div>
     `));
@@ -126,7 +126,7 @@ app.get('/', (req, res) => {
 // القوانين
 app.get('/rules', (req, res) => {
     res.send(layout(`
-        <h1 style="font-size: 45px; color: #d4af37; margin-bottom: 10px;">دستور وقوانين مقاطعة سبارك</h1>
+        <h1 style="font-size: 45px; color: #d4af37; margin-bottom: 10px;">قوانين مقاطعة سبارك</h1>
         <p style="color: #aaa; margin-bottom: 40px;">ملاحظة: هذه القوانين قابلة للتحديث والزيادة في اي وقت والجهل بالقوانين لا يعفيك من العقوبة.</p>
         
         <div class="cards-container">
