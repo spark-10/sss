@@ -118,7 +118,7 @@ app.get('/', (req, res) => {
     res.send(layout(`
         <section style="height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
             <h1 style="font-size: 60px; color: #d4af37; font-weight: 900;">مقاطعة سبارك</h1>
-            <p>انطلق في رحلة واقعية لا تنتهي داخل عالمنا</p>
+            <p>مع مقاطعة سبارك مش هتقدر تغمض عينيك</p>
             <div>
                 <a href="https://discord.gg/sp10" class="btn-main btn-discord"><i class="fa-brands fa-discord"></i> الديسكورد</a>
                 <a href="fivem://connect/cfx.re/join/p9bd35" class="btn-main btn-cfx-main"><i class="fa-solid fa-gamepad"></i> دخول السيرفر</a>
@@ -126,7 +126,7 @@ app.get('/', (req, res) => {
         </section>
 
         <div style="background: rgba(20,20,20,0.8); padding: 40px; border-radius: 15px; max-width: 900px; margin: 40px auto; border: 1px solid rgba(212,175,55,0.2);">
-            <h2 style="color: #d4af37;">نبذة مقاطعة سبارك</h2>
+            <h2 style="color: #d4af37;">نبذة عن مقاطعة سبارك</h2>
             <p style="line-height: 1.9; font-size: 18px;">نحن نقدم تجربة رول بلاي فريدة من نوعها، تجمع بين الواقعية والاحترافية. سيرفر سبارك مبني على سكربتات حصرية وإدارة واعية لضمان أفضل بيئة لعب ممكنة.</p>
         </div>
 
@@ -135,7 +135,7 @@ app.get('/', (req, res) => {
             <div style="background: rgba(25,25,25,0.85); padding: 35px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05);">
                 <i class="fa-solid fa-briefcase" style="font-size: 45px; color: #d4af37; margin-bottom: 20px; display: block;"></i>
                 <h3>وظائف متنوعة</h3>
-                <p>اختر من بين وظائف حكومية وخاصة، من الشرطة والإسعاف إلى الميكانيك والتجارة.</p>
+                <p>اختر من بين وظائف حكومية وخاصة، من الشرطة والإسعاف إلى الميكانيك وحرس الحدود .</p>
             </div>
             <div style="background: rgba(25,25,25,0.85); padding: 35px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05);">
                 <i class="fa-solid fa-shield-halved" style="font-size: 45px; color: #d4af37; margin-bottom: 20px; display: block;"></i>
@@ -159,7 +159,7 @@ app.get('/', (req, res) => {
 
 app.get('/rules', (req, res) => {
     res.send(layout(`
-        <h1 style="font-size: 45px; color: #d4af37; margin-bottom: 10px;">دستور وقوانين مقاطعة سبارك</h1>
+        <h1 style="font-size: 45px; color: #d4af37; margin-bottom: 10px;">قوانين مقاطعة سبارك</h1>
         <p style="color: #aaa; margin-bottom: 40px;">ملاحظة: هذه القوانين قابلة للتحديث والزيادة في اي وقت والجهل بالقوانين لا يعفيك من العقوبة.</p>
         
         <div class="cards-container">
@@ -167,7 +167,7 @@ app.get('/rules', (req, res) => {
                 <div class="icon-box" style="background-color: #4CAF50;"><i class="fa-solid fa-scale-balanced"></i></div>
                 <div>
                     <h3 style="margin: 0; color: #fff;">القوانين العامة</h3>
-                    <p style="color: #999; font-size: 14px; margin-top: 5px;">قوانين اللعب، المناطق الآمنة، والقيادة</p>
+                    <p style="color: #999; font-size: 14px; margin-top: 5px;">قوانين المقاطعة العامة </p>
                 </div>
             </div>
 
@@ -175,7 +175,7 @@ app.get('/rules', (req, res) => {
                 <div class="icon-box" style="background-color: #d4af37;"><i class="fa-solid fa-user-check"></i></div>
                 <div>
                     <h3 style="margin: 0; color: #fff;">اللاعب المعتمد</h3>
-                    <p style="color: #999; font-size: 14px; margin-top: 5px;">الشروط، الرتب، ونظام الانتداب</p>
+                    <p style="color: #999; font-size: 14px; margin-top: 5px;">شروط، الرتب، ونظام الانتداب</p>
                 </div>
             </div>
 
