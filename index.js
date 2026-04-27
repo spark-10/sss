@@ -40,7 +40,6 @@ const STYLES = `
     .btn-discord { background: #5865F2; color: #fff; border: 2px solid #5865F2; margin: 10px; }
     .btn-cfx-main { background: #d4af37; color: #000; border: 2px solid #d4af37; margin: 10px; }
 
-    /* حاوية البطاقات لتوزيعها بشكل شبكي */
     .cards-container {
         display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;
     }
@@ -94,7 +93,7 @@ const layout = (content) => `
             <span>مقاطعة سبارك</span>
         </a>
         <div class="nav-links">
-            <a href="/">الرئيوسية</a>
+            <a href="/">الرئيسية</a>
             <a href="/rules">القوانين</a>
             <a href="/creators">صناع المحتوى</a>
             <a href="/jobs">الوظائف</a>
@@ -107,7 +106,6 @@ const layout = (content) => `
 </html>
 `;
 
-// الرئيسية
 app.get('/', (req, res) => {
     res.send(layout(`
         <section style="height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
@@ -151,7 +149,6 @@ app.get('/', (req, res) => {
     `));
 });
 
-// القوانين الشاملة
 app.get('/rules', (req, res) => {
     res.send(layout(`
         <h1 style="font-size: 45px; color: #d4af37; margin-bottom: 10px;">دستور وقوانين مقاطعة سبارك</h1>
@@ -174,10 +171,6 @@ app.get('/rules', (req, res) => {
                 </div>
             </div>
 
-            <div class="rule-card" onclick="openModal('crime-modal')">
-                <div class="icon-box" style="background-color: #f44336;"><i class="fa-solid fa-mask"></i></div>
-                <div>
-            
             <div class="rule-card" onclick="openModal('crime-modal')">
                 <div class="icon-box" style="background-color: #f44336;"><i class="fa-solid fa-mask"></i></div>
                 <div>
@@ -286,7 +279,6 @@ app.get('/rules', (req, res) => {
                 </ul>
             </div>
         </div>
-        <div id="robbery-modal" class="modal">
 
         <div id="certified-modal" class="modal">
             <div class="modal-content">
@@ -481,7 +473,6 @@ app.get('/rules', (req, res) => {
     `));
 });
 
-// صناع المحتوى (تمت إضافة القوانين الجديدة)
 app.get('/creators', (req, res) => {
     res.send(layout(`
         <h1 style="font-size: 45px; color: #d4af37; margin-bottom: 40px;">صناع المحتوى</h1>
