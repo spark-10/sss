@@ -106,7 +106,7 @@ const layout = (content) => `
 <body>
     <nav class="navbar">
         <a href="/" class="logo">
-            <img src="https://cdn.discordapp.com/attachments/1478519443968753695/1478522144328781986/727d7d25559b45a4.gif?ex=69ef3ccc&is=69edeb4c&hm=1f04178069920aa5617e35ad853d0cbab96678aa19e14111f2dfd2201f4247ac&" alt="Spark Logo">
+            <img src="https://cdn.discordapp.com/attachments/1396289374735302837/1497962623726260436/727d7d25559b45a4.gif?ex=69f0bf68&is=69ef6de8&hm=1d3c63e967873a799ac30626c8f967afff65e2997958263840b42155d3a37ecc&" alt="Spark Logo">
             <span>مقاطعة سبارك</span>
         </a>
         <div class="nav-links">
