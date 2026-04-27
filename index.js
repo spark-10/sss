@@ -110,7 +110,7 @@ const layout = (content) => `
             <span>مقاطعة سبارك</span>
         </a>
         <div class="nav-links">
-            <a href="/">الرئيءسية</a>
+            <a href="/">الرئيسية</a>
             <a href="/rules">القوانين</a>
             <a href="/creators">صناع المحتوى</a>
             <a href="/jobs">الوظائف</a>
