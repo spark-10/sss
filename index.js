@@ -482,20 +482,48 @@ app.get('/rules', (req, res) => {
 app.get('/creators', (req, res) => {
     res.send(layout(`
         <h1 style="font-size: 45px; color: #d4af37; margin-bottom: 40px;">صناع المحتوى</h1>
-        
-        <div class="rule-card" onclick="openModal('creators-modal')" style="width: 450px; margin: auto;">
-            <div class="icon-box" style="background-color: #e91e63;"><i class="fa-solid fa-video"></i></div>
-            <div>
-                <h3 style="margin: 0; color: #fff;">نظام صناع المحتوى</h3>
-                <p style="color: #999; font-size: 14px; margin-top: 5px;">القوانين، المميزات، والباقات الحصرية</p>
+
+        <div class="cards-container">
+
+            <div class="rule-card" onclick="openModal('creator-benefits-modal')">
+                <div class="icon-box" style="background-color:#d4af37;">
+                    <i class="fa-solid fa-gift"></i>
+                </div>
+                <div>
+                    <h3 style="margin:0; color:#fff;">امتيازات صناع المحتوى</h3>
+                    <p style="color:#999; font-size:14px;">المميزات والباقات</p>
+                </div>
             </div>
+
+            <div class="rule-card" onclick="openModal('creator-rules-modal')">
+                <div class="icon-box" style="background-color:#f44336;">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <div>
+                    <h3 style="margin:0; color:#fff;">قوانين صناع المحتوى</h3>
+                    <p style="color:#999; font-size:14px;">قوانين البث والالتزام</p>
+                </div>
+            </div>
+
+            <div class="rule-card" onclick="openModal('creator-conditions-modal')">
+                <div class="icon-box" style="background-color:#4CAF50;">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div>
+                    <h3 style="margin:0; color:#fff;">شروط صناع المحتوى</h3>
+                    <p style="color:#999; font-size:14px;">شروط القبول والتقديم</p>
+                </div>
+            </div>
+
         </div>
 
-        <div id="creators-modal" class="modal">
+        <!-- امتيازات -->
+        <div id="creator-benefits-modal" class="modal">
             <div class="modal-content">
-                <span class="close-btn" onclick="closeModal('creators-modal')">&times;</span>
-                <h2>نظام صانع المحتوى (الستريمر)</h2>
-                
+                <span class="close-btn" onclick="closeModal('creator-benefits-modal')">&times;</span>
+
+                <h2>امتيازات صناع المحتوى</h2>
+
                 <div class="highlight-box">
                     تحرص إدارة مقاطعة سبارك على دعم صنّاع المحتوى وتوفير بيئة ملائمة تساعدهم على تقديم محتوى احترافي ومميز داخل السيرفر.
                 </div>
@@ -513,7 +541,19 @@ app.get('/creators', (req, res) => {
                     <li>- <strong>2. باقة راعي ستريمر معتمد:</strong> يحصل على مبلغ مالي 1,000,000 + 15,000 خبرة.</li>
                 </ul>
 
-                <h3>📹 قوانين صانع المحتوى (أثناء البث)</h3>
+                <div class="note-box">
+                    <strong>تنويه:</strong> هذه الامتيازات والباقات وُضعت لتمكين صنّاع المحتوى، ووجودها لا يعني أبداً أنهم فوق القوانين.
+                </div>
+            </div>
+        </div>
+
+        <!-- القوانين -->
+        <div id="creator-rules-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('creator-rules-modal')">&times;</span>
+
+                <h2>قوانين صناع المحتوى</h2>
+
                 <ul class="rules-list">
                     <li>1. يمنع التطرق بالكلام المسيء للادارة او السيرفر باي شكل من الاشكال.</li>
                     <li>2. يجب عليك وضع اسم (مقاطعة سبارك) في عنوان البث.</li>
@@ -522,8 +562,16 @@ app.get('/creators', (req, res) => {
                     <li>5. يمنع الخروج عن التمثيل أو طلب الرقابة أثناء البث؛ افتح تذكرة وابلغ عن المخالفين.</li>
                     <li>6. يمنع سب وشتم لاعبين السيرفر عن طريق بثك.</li>
                 </ul>
+            </div>
+        </div>
 
-                <h3>📝 شروط القبول كصانع محتوى</h3>
+        <!-- الشروط -->
+        <div id="creator-conditions-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('creator-conditions-modal')">&times;</span>
+
+                <h2>شروط القبول كصانع محتوى</h2>
+
                 <ul class="rules-list">
                     <li>1. التقديم عبر فتح تذكرة مع إرفاق روابط الحسابات أو القنوات المستخدمة.</li>
                     <li>2. يُشترط أن يكون المحتوى المقدم ملتزماً بالأخلاقيات العامة وذو طابع احترافي.</li>
@@ -531,12 +579,10 @@ app.get('/creators', (req, res) => {
                     <li>4. بعد موافقة لجنة القبول يتم الجدولة لإجراء المقابلة.</li>
                 </ul>
 
-                <div class="note-box">
-                    <strong>تنويه:</strong> هذه الامتيازات والباقات وُضعت لتمكين صنّاع المحتوى، ووجودها لا يعني أبداً أنهم فوق القوانين.
-                </div>
-
-                <div style="text-align: center; margin-top: 20px;">
-                    <a href="https://discord.gg/sp10" class="btn-main btn-discord">انضم للديسكورد لفتح تذكرة</a>
+                <div style="text-align:center; margin-top:20px;">
+                    <a href="https://discord.gg/sp10" class="btn-main btn-discord">
+                        انضم للديسكورد لفتح تذكرة
+                    </a>
                 </div>
             </div>
         </div>
