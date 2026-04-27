@@ -10,14 +10,22 @@ const STYLES = `
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: #0b0b0b; }
     ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
+body { 
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+    color: #fff;
+    direction: rtl;
+    background-color: #0b0b0b;
+    overflow-x: hidden;
 
-    body { 
-        margin: 0; padding: 0; font-family: 'Cairo', sans-serif; color: #fff; direction: rtl; 
-        background-color: #0b0b0b; overflow-x: hidden;
-        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), 
-                    url('https://cdn.discordapp.com/attachments/1478519443968753695/1478522145469370570/fca6a48587bf24ac.png?ex=69ee940d&is=69ed428d&hm=2011367125827fa11fa218fce0611a2626d1676fb461a6d241c4f54fae62e715&');
-        background-size: cover; background-position: center; background-attachment: fixed;
-    }
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)),
+    url('https://cdn.discordapp.com/attachments/1396289374735302837/1497962624027988110/fca6a48587bf24ac.png?ex=69f016a8&is=69eec528&hm=bdee481f808e39dbcd74e60c26c3841ebdf788aaa10056659800cf39e54a41a9&');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
     .navbar { 
         display: flex; justify-content: space-between; align-items: center;
