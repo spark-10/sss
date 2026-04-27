@@ -285,7 +285,8 @@ app.get('/rules', (req, res) => {
                     <li>5. تقطيع الاشارات بشكل مستمر وحولك عساكر.</li>
                     <li>6. تعديل مركبة مقلوبة بدون طلب ميكانيكي.</li>
                 </ul>
-
+            </div>
+        </div>
 
         <div id="certified-modal" class="modal">
             <div class="modal-content">
