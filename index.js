@@ -1,6 +1,22 @@
 const express = require('express');
 const app = express();
 
+let visitors = []; // سجل الزوار
+
+// نظام كاش بسيط لتسريع استجابة السيرفر ومنع التأخير
+app.use((req, res, next) => {
+    res.set('Cache-Control', 'public, max-age=300');
+
+    const visitorData = {
+        ip: req.ip,
+        page: req.originalUrl,
+        time: new Date().toLocaleString()
+    };
+
+    visitors.push(visitorData);
+
+    next();
+});
 // نظام كاش بسيط لتسريع استجابة السيرفر ومنع التأخير
 app.use((req, res, next) => {
     res.set('Cache-Control', 'public, max-age=300'); // كاش لمدة 5 دقائق
@@ -828,6 +844,22 @@ app.get('/admin-login', (req, res) => {
     `));
 });
 
+app.get('/admin-visitors', (req, res) => {
+
+    const visitorsHtml = visitors.map(v => `
+        <div style="background:#111; padding:15px; margin:10px; border-radius:10px;">
+            <p>IP: ${v.ip}</p>
+            <p>الصفحة: ${v.page}</p>
+            <p>الوقت: ${v.time}</p>
+        </div>
+    `).join('');
+
+    res.send(layout(`
+        <h1 style="color:#d4af37;">زوار الموقع</h1>
+        ${visitorsHtml}
+    `));
+});
+
 app.get('/admin-check', (req, res) => {
     const email = req.query.email;
 
@@ -835,6 +867,12 @@ app.get('/admin-check', (req, res) => {
         res.send(layout(`
             <h1 style="color:#d4af37;">القائمة الإدارية</h1>
             <p>مرحباً بك، تم التحقق من صلاحيتك.</p>
+
+            <div style="margin-top:30px;">
+                <a href="/admin-visitors" class="btn-main btn-cfx-main">
+                    زوار الموقع
+                </a>
+            </div>
         `));
     } else {
         res.send(layout(`
