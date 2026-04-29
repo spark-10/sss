@@ -121,7 +121,7 @@ const layout = (content) => `
 <body>
     <nav class="navbar">
         <a href="/" class="logo">
-            <img src="https://cdn.discordapp.com/attachments/1396289374735302837/1497962624027988110/fca6a48587bf24ac.png?ex=69f210e8&is=69f0bf68&hm=c9ccb7c9affa32eeeda0ddc317276a77e310bbe8fb86ac4223e4588cfa44eaad&">
+            <img src="https://cdn.discordapp.com/attachments/1396289374735302837/1497962623726260436/727d7d25559b45a4.gif?ex=69f2b9a8&is=69f16828&hm=dbd4fbaee50880a4e74b00fc558105b09e8a5acea35b6320462da0879fee983d&">
             <span>مقاطعة سبارك</span>
         </a>
         <div class="nav-links">
