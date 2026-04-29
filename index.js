@@ -5,7 +5,7 @@ let totalVisits = 0;
 
 // نظام كاش بسيط لتسريع استجابة السيرفر ومنع التأخير
 app.use((req, res, next) => {
-    res.set('Cache-Control', 'public, max-age=300');
+res.set('Cache-Control', 'no-store');
 
     totalVisits++;
 
