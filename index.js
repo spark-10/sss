@@ -846,20 +846,35 @@ app.get('/admin-login', (req, res) => {
 
 app.get('/admin-visitors', (req, res) => {
 
-    const visitorsHtml = visitors.map(v => `
-        <div style="background:#111; padding:15px; margin:10px; border-radius:10px;">
-            <p>IP: ${v.ip}</p>
-            <p>الصفحة: ${v.page}</p>
-            <p>الوقت: ${v.time}</p>
-        </div>
-    `).join('');
+    const totalVisitors = visitors.length;
 
     res.send(layout(`
         <h1 style="color:#d4af37;">زوار الموقع</h1>
-        ${visitorsHtml}
+
+        <div style="
+            background:#111;
+            padding:30px;
+            border-radius:15px;
+            max-width:500px;
+            margin:30px auto;
+            border:1px solid rgba(212,175,55,0.3);
+        ">
+            <h2 style="font-size:50px; color:#d4af37; margin:0;">
+                ${totalVisitors}
+            </h2>
+
+            <p style="color:#999; font-size:18px;">
+                عدد زيارات الموقع
+            </p>
+        </div>
+
+        <div style="margin-top:30px;">
+            <a href="/admin-login" class="btn-main btn-cfx-main">
+                رجوع للإدارة
+            </a>
+        </div>
     `));
 });
-
 app.get('/admin-check', (req, res) => {
     const email = req.query.email;
 
