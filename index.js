@@ -697,7 +697,7 @@ app.get('/jobs', (req, res) => {
         <p class="job-desc">اضغط لماشاهدة شرح وظيفة الدواجن</p>
     </a>
 
-    <a href="رابط_شرح_المزارع" target="_blank" class="job-card">
+    <a href="https://youtu.be/4SRBIhboAUE?si=kPrj9KYNeEgqtg2D" target="_blank" class="job-card">
         <div class="job-icon" style="background-color: #4CAF50;">
             <i class="fa-solid fa-seedling"></i>
         </div>
