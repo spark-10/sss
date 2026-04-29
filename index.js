@@ -125,11 +125,10 @@ const layout = (content) => `
             <span>مقاطعة سبارك</span>
         </a>
         <div class="nav-links">
-            <a href="/">الرئيسية</a>
-            <a href="/القوانين">القوانين</a>
-            <a href="/صناع المحتوى">صناع المحتوى</a>
-            <a href="/الوضائف">الوظائف</a>
-            <a href="/المتجر">المتجر</a>
+     <a href="/rules">القوانين</a>
+<a href="/creators">صناع المحتوى</a>
+<a href="/jobs">الوظائف</a>
+<a href="/store">المتجر</a>
         </div>
     </nav>
     <div class="content-area">${content}</div>
