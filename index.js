@@ -23,8 +23,8 @@ body {
     overflow-x: hidden;
 
     background-image:
-linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
-    url('https://cdn.discordapp.com/attachments/1396289374735302837/1497962624027988110/fca6a48587bf24ac.png?ex=69f210e8&is=69f0bf68&hm=c9ccb7c9affa32eeeda0ddc317276a77e310bbe8fb86ac4223e4588cfa44eaad&');
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
+    url('https://cdn.discordapp.com/attachments/1396289374735302837/1497962624027988110/fca6a48587bf24ac.png');
 
     background-size: cover;
     background-position: center;
@@ -121,7 +121,7 @@ const layout = (content) => `
 <body>
     <nav class="navbar">
         <a href="/" class="logo">
-            <img src="https://cdn.discordapp.com/attachments/1396289374735302837/1497962623726260436/727d7d25559b45a4.gif?ex=69f210e8&is=69f0bf68&hm=32ee259c621edc71cad9599dd53fd8c59fcf5e7a331765079e7e95fd34a0a392&">
+            <img src="https://cdn.discordapp.com/attachments/1396289374735302837/1497962624027988110/fca6a48587bf24ac.png?ex=69f210e8&is=69f0bf68&hm=c9ccb7c9affa32eeeda0ddc317276a77e310bbe8fb86ac4223e4588cfa44eaad&">
             <span>مقاطعة سبارك</span>
         </a>
         <div class="nav-links">
@@ -607,43 +607,43 @@ app.get('/jobs', (req, res) => {
             .jobs-header { text-align: center; margin-bottom: 40px; }
             .jobs-header h1 { font-size: 45px; color: #d4af37; margin-bottom: 10px; }
             .jobs-header p { color: #aaa; font-size: 18px; }
-            .jobs-section-title { text-align: center; color: #fff; font-size: 28px; margin: 40px 0 20px; }
-            
+            .jobs-section-title { text-align: center; color: #d4af37; font-size: 30px; margin: 50px 0 25px; }
+
             .jobs-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; padding: 20px; }
-            
+
             .job-card {
                 background: rgba(15, 15, 15, 0.9);
-                border: 1px solid rgba(212, 175, 55, 0.1);
+                border: 1px solid rgba(212, 175, 55, 0.25);
                 border-radius: 15px;
-                padding: 40px 20px;
+                padding: 35px 20px;
                 text-align: center;
-                width: 320px;
+                width: 280px;
                 text-decoration: none;
                 transition: all 0.3s ease;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .job-card:hover {
                 transform: translateY(-8px);
                 border-color: #d4af37;
                 box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
             }
-            
+
             .job-icon {
                 width: 75px;
                 height: 75px;
-                border-radius: 15px;
+                border-radius: 50%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 font-size: 35px;
                 color: #fff;
-                margin-bottom: 25px;
+                margin-bottom: 20px;
             }
-            
-            .job-title { color: #fff; font-size: 24px; font-weight: bold; margin: 0 0 10px 0; }
+
+            .job-title { color: #fff; font-size: 22px; font-weight: bold; margin: 0 0 10px 0; }
             .job-desc { color: #888; font-size: 15px; line-height: 1.6; margin: 0; }
         </style>
 
@@ -670,7 +670,7 @@ app.get('/jobs', (req, res) => {
             <a href="/rules#police-modal" class="job-card">
                 <div class="job-icon" style="background-color: #1a4b8c;"><i class="fa-solid fa-shield-halved"></i></div>
                 <h3 class="job-title">الأمن العام</h3>
-                <p class="job-desc">انضم لقوات الأمن وحافظ على النظام في المقاطعة</p>
+                <p class="job-desc">حافظ على النظام في المقاطعة</p>
             </a>
 
             <a href="/rules#crime-modal" class="job-card">
@@ -685,9 +685,20 @@ app.get('/jobs', (req, res) => {
                 <p class="job-desc">اصلح المركبات وقدم خدمات الصيانة</p>
             </a>
         </div>
+
+        <h2 class="jobs-section-title">الوظائف العامة</h2>
+
+        <div class="jobs-grid">
+            <a href="YOUR_YOUTUBE_LINK_HERE" target="_blank" class="job-card">
+                <div class="job-icon" style="background-color: #f1c40f;">
+                    <i class="fa-solid fa-crow"></i>
+                </div>
+                <h3 class="job-title">الدواجن</h3>
+                <p class="job-desc">اضغط لمشاهدة شرح وظيفة الدواجن</p>
+            </a>
+        </div>
     `));
 });
-
 app.get('/store', (req, res) => res.send(layout(`<h1>المتجر</h1><p>قريباً...</p>`)));
 
 module.exports = app;
