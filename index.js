@@ -688,15 +688,23 @@ app.get('/jobs', (req, res) => {
 
         <h2 class="jobs-section-title">الوظائف العامة</h2>
 
-        <div class="jobs-grid">
-            <a href="https://youtu.be/DZwpVsw9CIQ?si=W3owJHBiXYX3HWw2" target="_blank" class="job-card">
-                <div class="job-icon" style="background-color: #f1c40f;">
-                    <i class="fa-solid fa-crow"></i>
-                </div>
-                <h3 class="job-title">الدواجن</h3>
-                <p class="job-desc">اضغط لماشاهدة شرح وظيفة الدواجن</p>
-            </a>
+<div class="jobs-grid">
+    <a href="https://youtu.be/DZwpVsw9CIQ?si=W3owJHBiXYX3HWw2" target="_blank" class="job-card">
+        <div class="job-icon" style="background-color: #f1c40f;">
+            <i class="fa-solid fa-crow"></i>
         </div>
+        <h3 class="job-title">الدواجن</h3>
+        <p class="job-desc">اضغط لماشاهدة شرح وظيفة الدواجن</p>
+    </a>
+
+    <a href="رابط_شرح_المزارع" target="_blank" class="job-card">
+        <div class="job-icon" style="background-color: #4CAF50;">
+            <i class="fa-solid fa-seedling"></i>
+        </div>
+        <h3 class="job-title">المزارع</h3>
+        <p class="job-desc">اضغط لمشاهدة شرح وظيفة المزارع</p>
+    </a>
+</div>
     `));
 });
 app.get('/store', (req, res) => res.send(layout(`<h1>المتجر</h1><p>قريباً...</p>`)));
