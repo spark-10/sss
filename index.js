@@ -153,7 +153,43 @@ app.get('/', (req, res) => {
             <h2 style="color: #d4af37;">نبذة عن مقاطعة سبارك</h2>
             <p style="line-height: 1.9; font-size: 18px;">نحن نقدم تجربة رول بلاي فريدة من نوعها، تجمع بين الواقعية والاحترافية. سيرفر سبارك مبني على سكربتات حصرية وإدارة واعية لضمان أفضل بيئة لعب ممكنة.</p>
         </div>
+<div style="margin: 60px auto; max-width: 900px;">
+    <h2 style="color:#d4af37; margin-bottom:30px;">منصاتنا الاجتماعية</h2>
 
+    <div style="display:flex; justify-content:center; gap:25px; flex-wrap:wrap;">
+
+        <a href="رابط_التيك_توك_هنا" target="_blank" style="
+            background: rgba(20,20,20,0.85);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 15px;
+            padding: 30px;
+            width: 220px;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        ">
+            <i class="fa-brands fa-tiktok" style="font-size:50px; color:#fff; margin-bottom:15px;"></i>
+            <h3>تيك توك</h3>
+            <p style="color:#999;">تابع محتوى السيرفر على تيك توك</p>
+        </a>
+
+        <a href="https://www.youtube.com/@SSPP10" target="_blank" style="
+            background: rgba(20,20,20,0.85);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 15px;
+            padding: 30px;
+            width: 220px;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        ">
+            <i class="fa-brands fa-youtube" style="font-size:50px; color:#ff0000; margin-bottom:15px;"></i>
+            <h3>يوتيوب</h3>
+            <p style="color:#999;">شاهد فيديوهات السيرفر</p>
+        </a>
+
+    </div>
+</div>
         <h2 style="margin-top: 60px;">تجربتنا الفريدة</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 40px 0;">
             <div style="background: rgba(25,25,25,0.85); padding: 35px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05);">
