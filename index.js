@@ -761,7 +761,6 @@ app.get('/jobs', (req, res) => {
     </div>
     <h3 class="job-title">الأسماك</h3>
     <p class="job-desc">اضغط لمشاهدة شرح وظيفة الأسماك</p>
-    </div>
 </a>
 
 <a href="https://www.youtube.com/watch?v=KFBJXBDjDYc" target="_blank" class="job-card">
