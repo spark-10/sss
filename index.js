@@ -24,7 +24,7 @@ body {
 
     background-image:
     linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
-    url('https://cdn.discordapp.com/attachments/1396289374735302837/1497962624027988110/fca6a48587bf24ac.png');
+    url('https://cdn.discordapp.com/attachments/1396289374735302837/1497962624027988110/fca6a48587bf24ac.png?ex=69f210e8&is=69f0bf68&hm=c9ccb7c9affa32eeeda0ddc317276a77e310bbe8fb86ac4223e4588cfa44eaad&');
 
     background-size: cover;
     background-position: center;
@@ -121,7 +121,7 @@ const layout = (content) => `
 <body>
     <nav class="navbar">
         <a href="/" class="logo">
-            <img src="https://cdn.discordapp.com/attachments/1396289374735302837/1497962623726260436/727d7d25559b45a4.gif?ex=69f0bf68&is=69ef6de8&hm=1d3c63e967873a799ac30626c8f967afff65e2997958263840b42155d3a37ecc&" alt="Spark Logo">
+            <img src="https://cdn.discordapp.com/attachments/1396289374735302837/1497962623726260436/727d7d25559b45a4.gif?ex=69f210e8&is=69f0bf68&hm=32ee259c621edc71cad9599dd53fd8c59fcf5e7a331765079e7e95fd34a0a392&">
             <span>مقاطعة سبارك</span>
         </a>
         <div class="nav-links">
