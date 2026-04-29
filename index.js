@@ -709,7 +709,7 @@ app.get('/jobs', (req, res) => {
         <i class="fa-solid fa-tree"></i>
     </div>
     <h3 class="job-title">الأخشاب</h3>
-    <p class="job-desc">اضغط لمشاهدة شرح وظيفة الأخشاب</p>
+    <p class="job-desc">اضغط لمشاهدة شرح وظيفة الأخشـاب</p>
 </a>
 </div>
     `));
