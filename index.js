@@ -98,9 +98,23 @@ const layout = (content) => `
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     ${STYLES}
     <script>
-        function openModal(id) { document.getElementById(id).style.display = "block"; document.body.style.overflow = "hidden"; }
+        function openModal(id) { 
+            const modal = document.getElementById(id);
+            if(modal) {
+                modal.style.display = "block"; 
+                document.body.style.overflow = "hidden"; 
+            }
+        }
         function closeModal(id) { document.getElementById(id).style.display = "none"; document.body.style.overflow = "auto"; }
         window.onclick = function(event) { if (event.target.className === 'modal') closeModal(event.target.id); }
+        
+        // كود لفتح النافذة تلقائياً إذا جاي من رابط الوظائف
+        window.onload = function() {
+            if(window.location.hash) {
+                const modalId = window.location.hash.substring(1);
+                openModal(modalId);
+            }
+        }
     </script>
 </head>
 <body>
@@ -517,7 +531,6 @@ app.get('/creators', (req, res) => {
 
         </div>
 
-        <!-- امتيازات -->
         <div id="creator-benefits-modal" class="modal">
             <div class="modal-content">
                 <span class="close-btn" onclick="closeModal('creator-benefits-modal')">&times;</span>
@@ -547,7 +560,6 @@ app.get('/creators', (req, res) => {
             </div>
         </div>
 
-        <!-- القوانين -->
         <div id="creator-rules-modal" class="modal">
             <div class="modal-content">
                 <span class="close-btn" onclick="closeModal('creator-rules-modal')">&times;</span>
@@ -565,7 +577,6 @@ app.get('/creators', (req, res) => {
             </div>
         </div>
 
-        <!-- الشروط -->
         <div id="creator-conditions-modal" class="modal">
             <div class="modal-content">
                 <span class="close-btn" onclick="closeModal('creator-conditions-modal')">&times;</span>
@@ -588,7 +599,94 @@ app.get('/creators', (req, res) => {
         </div>
     `));
 });
-app.get('/jobs', (req, res) => res.send(layout(`<h1>الوظائف</h1><p>قريباً...</p>`)));
+
+app.get('/jobs', (req, res) => {
+    res.send(layout(`
+        <style>
+            .jobs-header { text-align: center; margin-bottom: 40px; }
+            .jobs-header h1 { font-size: 45px; color: #d4af37; margin-bottom: 10px; }
+            .jobs-header p { color: #aaa; font-size: 18px; }
+            .jobs-section-title { text-align: center; color: #fff; font-size: 28px; margin: 40px 0 20px; }
+            
+            .jobs-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; padding: 20px; }
+            
+            .job-card {
+                background: rgba(15, 15, 15, 0.9);
+                border: 1px solid rgba(212, 175, 55, 0.1);
+                border-radius: 15px;
+                padding: 40px 20px;
+                text-align: center;
+                width: 320px;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .job-card:hover {
+                transform: translateY(-8px);
+                border-color: #d4af37;
+                box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+            }
+            
+            .job-icon {
+                width: 75px;
+                height: 75px;
+                border-radius: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 35px;
+                color: #fff;
+                margin-bottom: 25px;
+            }
+            
+            .job-title { color: #fff; font-size: 24px; font-weight: bold; margin: 0 0 10px 0; }
+            .job-desc { color: #888; font-size: 15px; line-height: 1.6; margin: 0; }
+        </style>
+
+        <div class="jobs-header">
+            <h1>الوظائف العامة والمعتمدة</h1>
+            <p>اختر مسيرتك المهنية في مقاطعة سبارك</p>
+        </div>
+
+        <h2 class="jobs-section-title">الوظائف المعتمدة</h2>
+
+        <div class="jobs-grid">
+            <a href="/rules" class="job-card">
+                <div class="job-icon" style="background-color: #c62828;"><i class="fa-solid fa-heart-pulse"></i></div>
+                <h3 class="job-title">الهلال الأحمر</h3>
+                <p class="job-desc">قدم المساعدة الطبية وأنقذ الأرواح</p>
+            </a>
+
+            <a href="/rules#border-modal" class="job-card">
+                <div class="job-icon" style="background-color: #00838f;"><i class="fa-solid fa-building-shield"></i></div>
+                <h3 class="job-title">حرس الحدود</h3>
+                <p class="job-desc">احم المنشآت الحيوية والموانئ</p>
+            </a>
+
+            <a href="/rules#police-modal" class="job-card">
+                <div class="job-icon" style="background-color: #1a4b8c;"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3 class="job-title">الأمن العام</h3>
+                <p class="job-desc">انضم لقوات الأمن وحافظ على النظام في المقاطعة</p>
+            </a>
+
+            <a href="/rules#crime-modal" class="job-card">
+                <div class="job-icon" style="background-color: #6a1b9a;"><i class="fa-solid fa-users"></i></div>
+                <h3 class="job-title">المنظمات</h3>
+                <p class="job-desc">انضم لمنظمة أو أسس منظمتك الخاصة</p>
+            </a>
+
+            <a href="/rules#mechanic-modal" class="job-card">
+                <div class="job-icon" style="background-color: #e65100;"><i class="fa-solid fa-wrench"></i></div>
+                <h3 class="job-title">الميكانيكي</h3>
+                <p class="job-desc">اصلح المركبات وقدم خدمات الصيانة</p>
+            </a>
+        </div>
+    `));
+});
+
 app.get('/store', (req, res) => res.send(layout(`<h1>المتجر</h1><p>قريباً...</p>`)));
 
 module.exports = app;
