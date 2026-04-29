@@ -20,17 +20,18 @@ body {
     font-family: 'Cairo', sans-serif;
     color: #fff;
     direction: rtl;
-    background-color: #0b0b0b;
     overflow-x: hidden;
 
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)),
-    url('https://cdn.discordapp.com/attachments/1396289374735302837/1497962624027988110/fca6a48587bf24ac.png?ex=69f016a8&is=69eec528&hm=bdee481f808e39dbcd74e60c26c3841ebdf788aaa10056659800cf39e54a41a9&');
+    background-image:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
+    url('https://cdn.discordapp.com/attachments/1396289374735302837/1497962624027988110/fca6a48587bf24ac.png');
 
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
+    background-color: #0b0b0b;
 }
-
     .navbar { 
         display: flex; justify-content: space-between; align-items: center;
         padding: 10px 8%; position: sticky; top: 0; width: 100%; z-index: 1000;
