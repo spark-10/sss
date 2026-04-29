@@ -1,27 +1,17 @@
 const express = require('express');
 const app = express();
 
-let visitors = []; // سجل الزوار
+let totalVisits = 0; 
 
 // نظام كاش بسيط لتسريع استجابة السيرفر ومنع التأخير
 app.use((req, res, next) => {
     res.set('Cache-Control', 'public, max-age=300');
 
-    const visitorData = {
-        ip: req.ip,
-        page: req.originalUrl,
-        time: new Date().toLocaleString()
-    };
-
-    visitors.push(visitorData);
+    totalVisits++;
 
     next();
 });
 // نظام كاش بسيط لتسريع استجابة السيرفر ومنع التأخير
-app.use((req, res, next) => {
-    res.set('Cache-Control', 'public, max-age=300'); // كاش لمدة 5 دقائق
-    next();
-});
 
 const STYLES = `
 <style>
@@ -846,7 +836,7 @@ app.get('/admin-login', (req, res) => {
 
 app.get('/admin-visitors', (req, res) => {
 
-    const totalVisitors = visitors.length;
+const totalVisitors = totalVisits;
 
     res.send(layout(`
         <h1 style="color:#d4af37;">زوار الموقع</h1>
