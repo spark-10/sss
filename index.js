@@ -761,8 +761,9 @@ app.get('/jobs', (req, res) => {
     </div>
     <h3 class="job-title">الأسماك</h3>
     <p class="job-desc">اضغط لمشاهدة شرح وظيفة الأسماك</p>
+    </div>
 </a>
-</div>
+
 <a href="https://www.youtube.com/watch?v=KFBJXBDjDYc" target="_blank" class="job-card">
     <div class="job-icon" style="background-color: #212121;">
         <i class="fa-solid fa-oil-can"></i>
