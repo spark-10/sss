@@ -986,17 +986,16 @@ app.get('/store', (req, res) => {
 
 <div class="cards-container">
 
-    <div class="rule-card" onclick="openModal('sedan-modal')">
-        <div class="icon-box" style="background-color:#607D8B;">
-            <i class="fa-solid fa-car-side"></i>
-        </div>
-        <div>
-            <h3 style="margin:0; color:#fff;">سيدان</h3>
-            <p style="color:#999;">مركبات السيدان</p>
-        </div>
+<div class="rule-card" onclick="openModal('sedan-modal')">
+    <div class="icon-box" style="background-color:#607D8B;">
+        <i class="fa-solid fa-car-side"></i>
     </div>
-
+    <div>
+        <h3 style="margin:0; color:#fff;">سيدان</h3>
+        <p style="color:#999;">مركبات السيدان</p>
+    </div>
 </div>
+  
 
 <div id="sedan-modal" class="modal">
     <div class="modal-content">
