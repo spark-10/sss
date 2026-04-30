@@ -996,25 +996,6 @@ app.get('/store', (req, res) => {
         </div>
     </div>
 
-</div>
-
-<div id="sedan-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('sedan-modal')">&times;</span>
-
-        <h2>مركبات السيدان</h2>
-
-        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:25px;">
-            <img src="https://d.top4top.io/p_37703mby38.png" style="width:350px; border-radius:15px;">
-            <img src="https://e.top4top.io/p_3770z77kn2.png" style="width:350px; border-radius:15px;">
-        </div>
-
-        <div class="note-box" style="margin-top:35px;">
-            للشراء أو الاستفسار يرجى فتح تذكرة متجر داخل الديسكورد.
-        </div>
-    </div>
-</div>
-
     <div class="rule-card" onclick="openModal('sport-modal')">
         <div class="icon-box" style="background-color:#E53935;">
             <i class="fa-solid fa-car"></i>
@@ -1055,18 +1036,35 @@ app.get('/store', (req, res) => {
         </div>
     </div>
 
-    <div class="rule-card" onclick="openModal('government-modal')">
-        <div class="icon-box" style="background-color:#3F51B5;">
-            <i class="fa-solid fa-building-shield"></i>
+ <div class="rule-card" onclick="openModal('government-modal')">
+    <div class="icon-box" style="background-color:#3F51B5;">
+        <i class="fa-solid fa-building"></i>
+    </div>
+    <div>
+        <h3 style="margin:0; color:#fff;">مركبات حكومية</h3>
+        <p style="color:#999;">مركبات الجهات الحكومية</p>
+    </div>
+</div>
+</div> <!-- cards-container -->
+
+
+<!-- بعدها تبدأ المودالات -->
+<div id="sedan-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('sedan-modal')">&times;</span>
+
+        <h2>مركبات السيدان</h2>
+
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:25px;">
+            <img src="https://d.top4top.io/p_37703mby38.png" style="width:350px; border-radius:15px;">
+            <img src="https://e.top4top.io/p_3770z77kn2.png" style="width:350px; border-radius:15px;">
         </div>
-        <div>
-            <h3 style="margin:0; color:#fff;">مركبات حكومية</h3>
-            <p style="color:#999;">مركبات الجهات الحكومية</p>
+
+        <div class="note-box" style="margin-top:35px;">
+            للشراء أو الاستفسار يرجى فتح تذكرة متجر داخل الديسكورد.
         </div>
     </div>
-
 </div>
-
         <div id="sponsor-modal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('sponsor-modal')">&times;</span>
