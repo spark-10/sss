@@ -822,233 +822,143 @@ app.get('/store', (req, res) => {
                     <i class="fa-solid fa-crown"></i>
                 </div>
                 <div>
+                    <h3 style="margin:0; color:#fff;">نبذة عن الراعي الرسمي</h3>
+                    <p style="color:#999;">مميزات بطاقة الراعي</p>
+                </div>
+            </div>
 
             <div class="rule-card" onclick="openModal('xp-modal')">
                 <div class="icon-box" style="background-color:#4CAF50;">
                     <i class="fa-solid fa-bolt"></i>
                 </div>
                 <div>
-                    <h3 style="margin:0; color:#fff;">ضعف الخبرة</h3>
-                    <p style="color:#999; font-size:14px;">مضاعفة الخبرة داخل السيرفر</p>
+                    <h3 style="margin:0; color:#fff;">نبذة عن ضعف الخبرة</h3>
+                    <p style="color:#999;">مضاعفة الخبرة داخل السيرفر</p>
+                </div>
+            </div>
+
+            <div class="rule-card" onclick="openModal('bronze-modal')">
+                <div class="icon-box" style="background-color:#cd7f32;">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+                <div>
+                    <h3 style="margin:0; color:#fff;">راعي برونزي</h3>
+                    <p style="color:#999;">تفاصيل الراعي البرونزي</p>
+                </div>
+            </div>
+
+            <div class="rule-card" onclick="openModal('silver-modal')">
+                <div class="icon-box" style="background-color:#9e9e9e;">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+                <div>
+                    <h3 style="margin:0; color:#fff;">الراعي الفضي</h3>
+                    <p style="color:#999;">تفاصيل الراعي الفضي</p>
+                </div>
+            </div>
+
+            <div class="rule-card" onclick="openModal('gold-modal')">
+                <div class="icon-box" style="background-color:#d4af37;">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+                <div>
+                    <h3 style="margin:0; color:#fff;">الراعي الذهبي</h3>
+                    <p style="color:#999;">تفاصيل الراعي الذهبي</p>
+                </div>
+            </div>
+
+            <div class="rule-card" onclick="openModal('platinum-modal')">
+                <div class="icon-box" style="background-color:#00bcd4;">
+                    <i class="fa-solid fa-gem"></i>
+                </div>
+                <div>
+                    <h3 style="margin:0; color:#fff;">الراعي البلاتيني</h3>
+                    <p style="color:#999;">تفاصيل الراعي البلاتيني</p>
+                </div>
+            </div>
+
+            <div class="rule-card" onclick="openModal('diamond-modal')">
+                <div class="icon-box" style="background-color:#00e5ff;">
+                    <i class="fa-solid fa-gem"></i>
+                </div>
+                <div>
+                    <h3 style="margin:0; color:#fff;">الراعي الألماسي</h3>
+                    <p style="color:#999;">تفاصيل الراعي الألماسي</p>
+                </div>
+            </div>
+
+            <div class="rule-card" onclick="openModal('official-modal')">
+                <div class="icon-box" style="background-color:#8e24aa;">
+                    <i class="fa-solid fa-certificate"></i>
+                </div>
+                <div>
+                    <h3 style="margin:0; color:#fff;">الراعي الرسمي</h3>
+                    <p style="color:#999;">تفاصيل الراعي الرسمي</p>
+                </div>
+            </div>
+
+            <div class="rule-card" onclick="openModal('strategic-modal')">
+                <div class="icon-box" style="background-color:#ff5722;">
+                    <i class="fa-solid fa-chess-king"></i>
+                </div>
+                <div>
+                    <h3 style="margin:0; color:#fff;">الراعي الاستراتيجي</h3>
+                    <p style="color:#999;">تفاصيل الراعي الاستراتيجي</p>
                 </div>
             </div>
 
         </div>
 
-        <!-- الراعي الرسمي -->
         <div id="sponsor-modal" class="modal">
             <div class="modal-content">
                 <span class="close-btn" onclick="closeModal('sponsor-modal')">&times;</span>
-
                 <h2>نبذة عن الراعي الرسمي</h2>
-
-                <div class="highlight-box">
-                    بطاقة الراعي تمنحك مجموعة من المميزات الحصرية داخل السيرفر لتجعل تجربتك أكثر احترافية وتميزًا.
-                </div>
-
-                <h3>مميزات بطاقة الراعي</h3>
-
                 <ul class="rules-list">
-                    <li>إعفاء من رسوم حجز المركبات العادي.</li>
-                    <li>إعفاء من رسوم دخول الميناء من الساعة 7 صباحًا حتى 7 مساءً.</li>
-                    <li>أولوية الدخول للسيرفر عند وجود طابور انتظار.</li>
-                    <li>إمكانية تسجيل الدخول في الوظيفة حتى لو كان العدد مكتمل.</li>
-                    <li>الحصول على بطاقة خاصة للراعي داخل السيرفر.</li>
-                    <li>احتساب الاشتراك من تاريخ استلام البطاقة داخل السيرفر.</li>
-                    <li>إضافة مميزات مستقبلية يتم الإعلان عنها لاحقًا.</li>
-                    <li>لا يمكن شراء نفس الراعي مرتين قبل انتهاء الاشتراك الحالي.</li>
+                    <li>إعفاء من رسوم حجز المركبات.</li>
+                    <li>أولوية الدخول للسيرفر.</li>
+                    <li>بطاقة خاصة داخل السيرفر.</li>
+                    <li>احتساب الاشتراك من تاريخ الاستلام.</li>
                 </ul>
             </div>
         </div>
 
-        <!-- ضعف الخبرة -->
         <div id="xp-modal" class="modal">
             <div class="modal-content">
                 <span class="close-btn" onclick="closeModal('xp-modal')">&times;</span>
-
                 <h2>نبذة عن ضعف الخبرة</h2>
-
-                <div class="highlight-box">
-                    استغل وقتك بذكاء وارفع مستواك بسرعة أكبر داخل السيرفر.
-                </div>
-
-                <h3>مميزات مضاعفة الخبرة</h3>
-
                 <ul class="rules-list">
                     <li>مضاعفة الخبرة بنسبة 50%.</li>
-                    <li>احتساب الوقت تلقائيًا أثناء اتصالك بالسيرفر فقط.</li>
-                    <li>إيقاف احتساب الوقت عند الانقطاع.</li>
-                </ul>
-
-                <h3>تشمل مضاعفة الخبرة</h3>
-
-                <ul class="rules-list">
-                    <li>إنعاش المرضى في الطوارئ الطبية.</li>
-                    <li>حجز المركبات للوظائف المعتمدة.</li>
-                    <li>البيع داخل الموانئ.</li>
-                    <li>توصيل الصناديق إلى المتاجر.</li>
-                    <li>الخبرة المكتسبة مع الرواتب.</li>
-                    <li>تركيب التعديلات على المركبات.</li>
-                    <li>والعديد من الأنشطة الأخرى.</li>
+                    <li>احتساب الوقت أثناء الاتصال فقط.</li>
+                    <li>تعمل على أغلب الوظائف والأنشطة.</li>
                 </ul>
             </div>
         </div>
 
-        <div class="rule-card" onclick="openModal('bronze-modal')">
-    <div class="icon-box" style="background-color:#cd7f32;">
-        <i class="fa-solid fa-medal"></i>
-    </div>
-    <div>
-        <h3 style="margin:0; color:#fff;">راعي برونزي</h3>
-        <p style="color:#999;">تفاصيل الراعي البرونزي</p>
-    </div>
-</div>
-
-<div class="rule-card" onclick="openModal('silver-modal')">
-    <div class="icon-box" style="background-color:#9e9e9e;">
-        <i class="fa-solid fa-medal"></i>
-    </div>
-    <div>
-        <h3 style="margin:0; color:#fff;">الراعي الفضي</h3>
-        <p style="color:#999;">تفاصيل الراعي الفضي</p>
-    </div>
-</div>
-
-<div class="rule-card" onclick="openModal('gold-modal')">
-    <div class="icon-box" style="background-color:#d4af37;">
-        <i class="fa-solid fa-crown"></i>
-    </div>
-    <div>
-        <h3 style="margin:0; color:#fff;">الراعي الذهبي</h3>
-        <p style="color:#999;">تفاصيل الراعي الذهبي</p>
-    </div>
-</div>
-
-<div class="rule-card" onclick="openModal('platinum-modal')">
-    <div class="icon-box" style="background-color:#00bcd4;">
-        <i class="fa-solid fa-gem"></i>
-    </div>
-    <div>
-        <h3 style="margin:0; color:#fff;">الراعي البلاتيني</h3>
-        <p style="color:#999;">تفاصيل الراعي البلاتيني</p>
-    </div>
-</div>
-
-<div class="rule-card" onclick="openModal('diamond-modal')">
-    <div class="icon-box" style="background-color:#00e5ff;">
-        <i class="fa-solid fa-diamond"></i>
-    </div>
-    <div>
-        <h3 style="margin:0; color:#fff;">الراعي الألماسي</h3>
-        <p style="color:#999;">تفاصيل الراعي الألماسي</p>
-    </div>
-</div>
-
-<div class="rule-card" onclick="openModal('official-modal')">
-    <div class="icon-box" style="background-color:#8e24aa;">
-        <i class="fa-solid fa-certificate"></i>
-    </div>
-    <div>
-        <h3 style="margin:0; color:#fff;">الراعي الرسمي</h3>
-        <p style="color:#999;">تفاصيل الراعي الرسمي</p>
-    </div>
-</div>
-
-<div class="rule-card" onclick="openModal('strategic-modal')">
-    <div class="icon-box" style="background-color:#ff5722;">
-        <i class="fa-solid fa-chess-king"></i>
-    </div>
-    <div>
-        <h3 style="margin:0; color:#fff;">الراعي الاستراتيجي</h3>
-        <p style="color:#999;">تفاصيل الراعي الاستراتيجي</p>
-    </div>
-</div>
-
-<div id="bronze-modal" class="modal">
-<div class="modal-content">
-<span class="close-btn" onclick="closeModal('bronze-modal')">&times;</span>
-<h2>راعي برونزي</h2>
-<ul class="rules-list">
-<li>المدة: 14 يوم</li>
-<li>500 ألف شرعي</li>
-<li>2500 خبرة</li>
-</ul>
-</div>
-</div>
-
-<div id="silver-modal" class="modal">
-<div class="modal-content">
-<span class="close-btn" onclick="closeModal('silver-modal')">&times;</span>
-<h2>الراعي الفضي</h2>
-<ul class="rules-list">
-<li>المدة: 21 يوم</li>
-<li>705 ألف</li>
-<li>4 آلاف خبرة</li>
-</ul>
-</div>
-</div>
-
-<div id="gold-modal" class="modal">
-<div class="modal-content">
-<span class="close-btn" onclick="closeModal('gold-modal')">&times;</span>
-<h2>الراعي الذهبي</h2>
-<ul class="rules-list">
-<li>المدة: 30 يوم</li>
-<li>1 مليون</li>
-<li>5 آلاف خبرة</li>
-</ul>
-</div>
-</div>
-
-<div id="platinum-modal" class="modal">
-<div class="modal-content">
-<span class="close-btn" onclick="closeModal('platinum-modal')">&times;</span>
-<h2>الراعي البلاتيني</h2>
-<ul class="rules-list">
-<li>المدة: 30 يوم</li>
-<li>2 مليون وخمسمية</li>
-<li>7500 خبرة</li>
-</ul>
-</div>
-</div>
-
-<div id="diamond-modal" class="modal">
-<div class="modal-content">
-<span class="close-btn" onclick="closeModal('diamond-modal')">&times;</span>
-<h2>الراعي الألماسي</h2>
-<ul class="rules-list">
-<li>المدة: 30 يوم</li>
-<li>3 مليون</li>
-<li>10 آلاف خبرة</li>
-</ul>
-</div>
-</div>
-
-<div id="official-modal" class="modal">
-<div class="modal-content">
-<span class="close-btn" onclick="closeModal('official-modal')">&times;</span>
-<h2>الراعي الرسمي</h2>
-<ul class="rules-list">
-<li>المدة: 30 يوم</li>
-<li>5 مليون</li>
-<li>13 ألف خبرة</li>
-</ul>
-</div>
-</div>
-
-<div id="strategic-modal" class="modal">
-<div class="modal-content">
-<span class="close-btn" onclick="closeModal('strategic-modal')">&times;</span>
-<h2>الراعي الاستراتيجي</h2>
-<ul class="rules-list">
-<li>المدة: 30 يوم</li>
-<li>7 مليون وخمسمية</li>
-<li>20 ألف خبرة</li>
-</ul>
-</div>
-</div>
+        ${makeSponsor('bronze-modal','راعي برونزي','14 يوم','500 ألف شرعي','2500 خبرة')}
+        ${makeSponsor('silver-modal','الراعي الفضي','21 يوم','705 ألف','4 آلاف خبرة')}
+        ${makeSponsor('gold-modal','الراعي الذهبي','30 يوم','1 مليون','5 آلاف خبرة')}
+        ${makeSponsor('platinum-modal','الراعي البلاتيني','30 يوم','2 مليون وخمسمية','7500 خبرة')}
+        ${makeSponsor('diamond-modal','الراعي الألماسي','30 يوم','3 مليون','10 آلاف خبرة')}
+        ${makeSponsor('official-modal','الراعي الرسمي','30 يوم','5 مليون','13 ألف خبرة')}
+        ${makeSponsor('strategic-modal','الراعي الاستراتيجي','30 يوم','7 مليون وخمسمية','20 ألف خبرة')}
     `));
 });
+
+function makeSponsor(id, title, duration, money, xp) {
+    return `
+        <div id="${id}" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('${id}')">&times;</span>
+                <h2>${title}</h2>
+                <ul class="rules-list">
+                    <li>المدة: ${duration}</li>
+                    <li>المبلغ: ${money}</li>
+                    <li>الخبرة: ${xp}</li>
+                </ul>
+            </div>
+        </div>
+    `;
+}
 
 const adminEmails = [
     "mx@gmail.com",
