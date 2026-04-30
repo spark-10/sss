@@ -822,11 +822,24 @@ app.get('/store', (req, res) => {
 <div class="cards-container">
 
 <div class="rule-card" onclick="openModal('sponsor-modal')">
+    <div class="icon-box" style="background-color:#d4af37;">
+        <i class="fa-solid fa-crown"></i>
+    </div>
+    <div>
+        <h3 style="margin:0; color:#fff;">نبذة عن الراعي الرسمي</h3>
+        <p style="color:#999;">مميزات بطاقة الراعي</p>
+    </div>
 </div>
 
 <div class="rule-card" onclick="openModal('xp-modal')">
+    <div class="icon-box" style="background-color:#4CAF50;">
+        <i class="fa-solid fa-bolt"></i>
+    </div>
+    <div>
+        <h3 style="margin:0; color:#fff;">نبذة عن ضعف الخبرة</h3>
+        <p style="color:#999;">مضاعفة الخبرة داخل السيرفر</p>
+    </div>
 </div>
-
 </div>
 
 <h2 style="color:#d4af37; margin-top:70px;">قسم الرعاة</h2>
