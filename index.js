@@ -1011,23 +1011,42 @@ app.get('/store', (req, res) => {
                     max-width:100%;
                     border-radius:15px;
                     border:2px solid rgba(212,175,55,0.3);
-                    <h2 style="color:#d4af37; margin-top:70px;">قسم المركبات</h2>
 
-<div class="cards-container">
-    <!-- كروت المركبات -->
-</div>
-
-<!-- هنا الصق مودال السيدان -->
-<div id="sedan-modal" class="modal">
-    ...
-</div>
-
-<div id="sponsor-modal" class="modal">
-                ">
             </div>
 
         </div>
+<h2 style="color:#d4af37; margin-top:70px;">قسم المركبات</h2>
 
+<div class="cards-container">
+
+    <div class="rule-card" onclick="openModal('sedan-modal')">
+        <div class="icon-box" style="background-color:#607D8B;">
+            <i class="fa-solid fa-car-side"></i>
+        </div>
+        <div>
+            <h3 style="margin:0; color:#fff;">سيدان</h3>
+            <p style="color:#999;">مركبات السيدان</p>
+        </div>
+    </div>
+
+</div>
+
+<div id="sedan-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('sedan-modal')">&times;</span>
+
+        <h2>مركبات السيدان</h2>
+
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:25px;">
+
+            <img src="https://d.top4top.io/p_37703mby38.png"
+            style="width:350px; border-radius:15px;">
+
+            <img src="https://e.top4top.io/p_3770z77kn2.png"
+            style="width:350px; border-radius:15px;">
+
+        </div>
+    </div>
         <div class="note-box" style="margin-top:35px;">
             للشراء أو الاستفسار يرجى فتح تذكرة متجر داخل الديسكورد.
         </div>
