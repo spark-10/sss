@@ -977,21 +977,30 @@ app.get('/store', (req, res) => {
     </div>
 </div>
 
-        ${makeSponsor('bronze-modal','راعي برونزي','14 يوم','500 ألف شرعي','2500 خبرة')}
-        ${makeSponsor('silver-modal','الراعي الفضي','21 يوم','705 ألف','4 آلاف خبرة')}
-        ${makeSponsor('gold-modal','الراعي الذهبي','30 يوم','1 مليون','5 آلاف خبرة')}
-        ${makeSponsor('platinum-modal','الراعي البلاتيني','30 يوم','2 مليون وخمسمية','7500 خبرة')}
-        ${makeSponsor('diamond-modal','الراعي الألماسي','30 يوم','3 مليون','10 آلاف خبرة')}
-        ${makeSponsor('official-modal','الراعي الرسمي','30 يوم','5 مليون','13 ألف خبرة')}
-        ${makeSponsor('strategic-modal','الراعي الاستراتيجي','30 يوم','7 مليون وخمسمية','20 ألف خبرة')}
+${makeSponsor('bronze-modal','راعي برونزي','14 يوم','500 ألف شرعي','2500 خبرة','https://cdn.discordapp.com/attachments/1489305135472705707/1499215853672075314/15ebcc13e242a635.png?ex=69f3fd11&is=69f2ab91&hm=a264b8f0be1fe708e47e23dd6dd99b6f0bbdf485840a96c73ca17540835441cc&')}
+${makeSponsor('silver-modal','الراعي الفضي','21 يوم','705 ألف','4 آلاف خبرة','https://cdn.discordapp.com/attachments/1489305135472705707/1499215854959595602/def4a742970be443.png?ex=69f3fd11&is=69f2ab91&hm=2182c2e64527f38f7d375d44dee7a7e2ae09c9ad14f393739a5dcad36ecc7582&')}
+${makeSponsor('gold-modal','الراعي الذهبي','30 يوم','1 مليون','5 آلاف خبرة','https://cdn.discordapp.com/attachments/1489305135472705707/1499215854536097953/d9cfc19cbb465e74.png?ex=69f3fd11&is=69f2ab91&hm=108b22bfa51b9d87e7b6a9525ece8bd06bf1e5477acce5f29b5c00f721fde7e3&')}
+${makeSponsor('platinum-modal','الراعي البلاتيني','30 يوم','2 مليون وخمسمية','7500 خبرة','https://cdn.discordapp.com/attachments/1489305135472705707/1499215855228026950/ebfad16bb87d35a4.png?ex=69f3fd11&is=69f2ab91&hm=c721054bb28fa3d3256f41b1b3f9f967b372a8d4f12e2d666166d42083a792c5&')}
+${makeSponsor('diamond-modal','الراعي الألماسي','30 يوم','3 مليون','10 آلاف خبرة','https://cdn.discordapp.com/attachments/1489305135472705707/1499215853957283930/35d0acbb638fe055.png?ex=69f3fd11&is=69f2ab91&hm=5de33a3a05603f309fec7a841d6eabcd8605a41cd03dad1aacc8b74d6f377de8&')}
+${makeSponsor('official-modal','الراعي الرسمي','30 يوم','5 مليون','13 ألف خبرة','https://cdn.discordapp.com/attachments/1489305135472705707/1499215853391183972/5e8570ee84a2b183.png?ex=69f3fd11&is=69f2ab91&hm=dbc7351f1116a85fa123ce3a0f56276ff50d61ca4a3e65951fa2934447dffa83&')}
+${makeSponsor('strategic-modal','الراعي الاستراتيجي','30 يوم','7 مليون وخمسمية','20 ألف خبرة','https://cdn.discordapp.com/attachments/1489305135472705707/1499215854233980928/346b4db315caa3d7.png?ex=69f3fd11&is=69f2ab91&hm=547ae93f0d9713704a8bb05c90a6c79d6ce62731a7ff839602e6a55390f3204c&')}
     `));
 });
 
-function makeSponsor(id, title, duration, money, xp) {
+function makeSponsor(id, title, duration, money, xp, image) {
     return `
         <div id="${id}" class="modal">
             <div class="modal-content">
                 <span class="close-btn" onclick="closeModal('${id}')">&times;</span>
+
+                <div style="text-align:center; margin-bottom:25px;">
+                    <img src="${image}" style="
+                        width:220px;
+                        border-radius:15px;
+                        border:2px solid rgba(212,175,55,0.4);
+                    ">
+                </div>
+
                 <h2>${title}</h2>
                 <ul class="rules-list">
                     <li>المدة: ${duration}</li>
