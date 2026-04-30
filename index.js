@@ -934,9 +934,14 @@ app.get('/store', (req, res) => {
 <div class="cards-container">
 
     <div class="rule-card" onclick="openModal('xp6-modal')">
-        <div class="icon-box" style="background-color:#4CAF50;">
-            <i class="fa-solid fa-bolt"></i>
-        </div>
+      <div class="icon-box" style="
+    background-image:url('https://cdn.discordapp.com/attachments/1396289374735302837/1499248698658390098/image.png?ex=69f41ba8&is=69f2ca28&hm=fc4297235293ab4438d5ae07438a2e16cc3fc7e078267c3e0f22fc37a5f38159&');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-color:transparent;
+">
+</div>
         <div>
             <h3 style="margin:0; color:#fff;">ضعف خبرة 6 ساعات</h3>
             <p style="color:#999;">تفاصيل العرض في الديسكورد</p>
