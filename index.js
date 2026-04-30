@@ -822,10 +822,6 @@ app.get('/store', (req, res) => {
                     <i class="fa-solid fa-crown"></i>
                 </div>
                 <div>
-                    <h3 style="margin:0; color:#fff;">الراعي الرسمي</h3>
-                    <p style="color:#999; font-size:14px;">مميزات بطاقة الراعي</p>
-                </div>
-            </div>
 
             <div class="rule-card" onclick="openModal('xp-modal')">
                 <div class="icon-box" style="background-color:#4CAF50;">
@@ -897,6 +893,160 @@ app.get('/store', (req, res) => {
                 </ul>
             </div>
         </div>
+
+        <div class="rule-card" onclick="openModal('bronze-modal')">
+    <div class="icon-box" style="background-color:#cd7f32;">
+        <i class="fa-solid fa-medal"></i>
+    </div>
+    <div>
+        <h3 style="margin:0; color:#fff;">راعي برونزي</h3>
+        <p style="color:#999;">تفاصيل الراعي البرونزي</p>
+    </div>
+</div>
+
+<div class="rule-card" onclick="openModal('silver-modal')">
+    <div class="icon-box" style="background-color:#9e9e9e;">
+        <i class="fa-solid fa-medal"></i>
+    </div>
+    <div>
+        <h3 style="margin:0; color:#fff;">الراعي الفضي</h3>
+        <p style="color:#999;">تفاصيل الراعي الفضي</p>
+    </div>
+</div>
+
+<div class="rule-card" onclick="openModal('gold-modal')">
+    <div class="icon-box" style="background-color:#d4af37;">
+        <i class="fa-solid fa-crown"></i>
+    </div>
+    <div>
+        <h3 style="margin:0; color:#fff;">الراعي الذهبي</h3>
+        <p style="color:#999;">تفاصيل الراعي الذهبي</p>
+    </div>
+</div>
+
+<div class="rule-card" onclick="openModal('platinum-modal')">
+    <div class="icon-box" style="background-color:#00bcd4;">
+        <i class="fa-solid fa-gem"></i>
+    </div>
+    <div>
+        <h3 style="margin:0; color:#fff;">الراعي البلاتيني</h3>
+        <p style="color:#999;">تفاصيل الراعي البلاتيني</p>
+    </div>
+</div>
+
+<div class="rule-card" onclick="openModal('diamond-modal')">
+    <div class="icon-box" style="background-color:#00e5ff;">
+        <i class="fa-solid fa-diamond"></i>
+    </div>
+    <div>
+        <h3 style="margin:0; color:#fff;">الراعي الألماسي</h3>
+        <p style="color:#999;">تفاصيل الراعي الألماسي</p>
+    </div>
+</div>
+
+<div class="rule-card" onclick="openModal('official-modal')">
+    <div class="icon-box" style="background-color:#8e24aa;">
+        <i class="fa-solid fa-certificate"></i>
+    </div>
+    <div>
+        <h3 style="margin:0; color:#fff;">الراعي الرسمي</h3>
+        <p style="color:#999;">تفاصيل الراعي الرسمي</p>
+    </div>
+</div>
+
+<div class="rule-card" onclick="openModal('strategic-modal')">
+    <div class="icon-box" style="background-color:#ff5722;">
+        <i class="fa-solid fa-chess-king"></i>
+    </div>
+    <div>
+        <h3 style="margin:0; color:#fff;">الراعي الاستراتيجي</h3>
+        <p style="color:#999;">تفاصيل الراعي الاستراتيجي</p>
+    </div>
+</div>
+
+<div id="bronze-modal" class="modal">
+<div class="modal-content">
+<span class="close-btn" onclick="closeModal('bronze-modal')">&times;</span>
+<h2>راعي برونزي</h2>
+<ul class="rules-list">
+<li>المدة: 14 يوم</li>
+<li>500 ألف شرعي</li>
+<li>2500 خبرة</li>
+</ul>
+</div>
+</div>
+
+<div id="silver-modal" class="modal">
+<div class="modal-content">
+<span class="close-btn" onclick="closeModal('silver-modal')">&times;</span>
+<h2>الراعي الفضي</h2>
+<ul class="rules-list">
+<li>المدة: 21 يوم</li>
+<li>705 ألف</li>
+<li>4 آلاف خبرة</li>
+</ul>
+</div>
+</div>
+
+<div id="gold-modal" class="modal">
+<div class="modal-content">
+<span class="close-btn" onclick="closeModal('gold-modal')">&times;</span>
+<h2>الراعي الذهبي</h2>
+<ul class="rules-list">
+<li>المدة: 30 يوم</li>
+<li>1 مليون</li>
+<li>5 آلاف خبرة</li>
+</ul>
+</div>
+</div>
+
+<div id="platinum-modal" class="modal">
+<div class="modal-content">
+<span class="close-btn" onclick="closeModal('platinum-modal')">&times;</span>
+<h2>الراعي البلاتيني</h2>
+<ul class="rules-list">
+<li>المدة: 30 يوم</li>
+<li>2 مليون وخمسمية</li>
+<li>7500 خبرة</li>
+</ul>
+</div>
+</div>
+
+<div id="diamond-modal" class="modal">
+<div class="modal-content">
+<span class="close-btn" onclick="closeModal('diamond-modal')">&times;</span>
+<h2>الراعي الألماسي</h2>
+<ul class="rules-list">
+<li>المدة: 30 يوم</li>
+<li>3 مليون</li>
+<li>10 آلاف خبرة</li>
+</ul>
+</div>
+</div>
+
+<div id="official-modal" class="modal">
+<div class="modal-content">
+<span class="close-btn" onclick="closeModal('official-modal')">&times;</span>
+<h2>الراعي الرسمي</h2>
+<ul class="rules-list">
+<li>المدة: 30 يوم</li>
+<li>5 مليون</li>
+<li>13 ألف خبرة</li>
+</ul>
+</div>
+</div>
+
+<div id="strategic-modal" class="modal">
+<div class="modal-content">
+<span class="close-btn" onclick="closeModal('strategic-modal')">&times;</span>
+<h2>الراعي الاستراتيجي</h2>
+<ul class="rules-list">
+<li>المدة: 30 يوم</li>
+<li>7 مليون وخمسمية</li>
+<li>20 ألف خبرة</li>
+</ul>
+</div>
+</div>
     `));
 });
 
