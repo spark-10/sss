@@ -565,7 +565,7 @@ app.get('/creators', (req, res) => {
 
             <div class="rule-card" onclick="openModal('creator-conditions-modal')">
              <div class="icon-box" style="
-    background-image:url('https://cdn.discordapp.com/attachments/1396289374735302837/1499248698658390098/image.png?ex=69f41ba8&is=69f2ca28&hm=fc4297235293ab4438d5ae07438a2e16cc3fc7e078267c3e0f22fc37a5f38159&');
+    background-image:url('https://cdn.discordapp.com/attachments/1396289374735302837/1499256862980309022/Untitled_10.png?ex=69f42342&is=69f2d1c2&hm=32928548fe0b1d0ca2c87932763e3d392293d2157771dae6ae13411991d0236e&&');
     background-size:cover;
     background-position:center;
     background-color:transparent;
@@ -837,7 +837,7 @@ app.get('/store', (req, res) => {
 
 <div class="rule-card" onclick="openModal('xp-modal')">
   <div class="icon-box" style="
-    background-image:url('sandbox:/mnt/data/image(34).png');
+    background-image:url('https://cdn.discordapp.com/attachments/1396289374735302837/1499256862980309022/Untitled_10.png?ex=69f42342&is=69f2d1c2&hm=32928548fe0b1d0ca2c87932763e3d392293d2157771dae6ae13411991d0236e&');
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
@@ -935,7 +935,7 @@ app.get('/store', (req, res) => {
 
     <div class="rule-card" onclick="openModal('xp6-modal')">
       <div class="icon-box" style="
-    background-image:url('https://i.imgur.com/2QXIcon.png');
+    background-image:url('https://cdn.discordapp.com/attachments/1396289374735302837/1499256862980309022/Untitled_10.png?ex=69f42342&is=69f2d1c2&hm=32928548fe0b1d0ca2c87932763e3d392293d2157771dae6ae13411991d0236e&');
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
@@ -950,7 +950,7 @@ app.get('/store', (req, res) => {
 
     <div class="rule-card" onclick="openModal('xp12-modal')">
   <div class="icon-box" style="
-    background-image:url('https://cdn.discordapp.com/attachments/1396289374735302837/1499248698658390098/image.png?ex=69f41ba8&is=69f2ca28&hm=fc4297235293ab4438d5ae07438a2e16cc3fc7e078267c3e0f22fc37a5f38159&');
+    background-image:url('https://cdn.discordapp.com/attachments/1396289374735302837/1499256862980309022/Untitled_10.png?ex=69f42342&is=69f2d1c2&hm=32928548fe0b1d0ca2c87932763e3d392293d2157771dae6ae13411991d0236e&');
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
@@ -965,7 +965,7 @@ app.get('/store', (req, res) => {
 
 <div class="rule-card" onclick="openModal('xp24-modal')">
   <div class="icon-box" style="
-    background-image:url('https://cdn.discordapp.com/attachments/1396289374735302837/1499248698658390098/image.png?ex=69f41ba8&is=69f2ca28&hm=fc4297235293ab4438d5ae07438a2e16cc3fc7e078267c3e0f22fc37a5f38159&');
+    background-image:url('https://cdn.discordapp.com/attachments/1396289374735302837/1499256862980309022/Untitled_10.png?ex=69f42342&is=69f2d1c2&hm=32928548fe0b1d0ca2c87932763e3d392293d2157771dae6ae13411991d0236e&');
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
