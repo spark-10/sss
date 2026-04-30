@@ -944,16 +944,83 @@ app.get('/store', (req, res) => {
         </div>
     </div>
 
-    <div class="rule-card" onclick="openModal('xp24-modal')">
-        <div class="icon-box" style="background-color:#2E7D32;">
-            <i class="fa-solid fa-bolt"></i>
+<div class="rule-card" onclick="openModal('xp24-modal')">
+    <div class="icon-box" style="background-color:#2E7D32;">
+        <i class="fa-solid fa-bolt"></i>
+    </div>
+    <div>
+        <h3 style="margin:0; color:#fff;">ضعف خبرة 24 ساعة</h3>
+        <p style="color:#999;">تفاصيل العرض في الديسكورد</p>
+    </div>
+</div>
+
+</div> <!-- إغلاق قسم ضعف الخبرة -->
+
+<h2 style="color:#d4af37; margin-top:70px;">قسم المركبات</h2>
+
+<div class="cards-container">
+
+    <div class="rule-card" onclick="openModal('sedan-modal')">
+        <div class="icon-box" style="background-color:#607D8B;">
+            <i class="fa-solid fa-car-side"></i>
         </div>
         <div>
-            <h3 style="margin:0; color:#fff;">ضعف خبرة 24 ساعة</h3>
-            <p style="color:#999;">تفاصيل العرض في الديسكورد</p>
+            <h3 style="margin:0; color:#fff;">سيدان</h3>
+            <p style="color:#999;">مركبات السيدان</p>
         </div>
     </div>
 
+    <div class="rule-card" onclick="openModal('sport-modal')">
+        <div class="icon-box" style="background-color:#E53935;">
+            <i class="fa-solid fa-car"></i>
+        </div>
+        <div>
+            <h3 style="margin:0; color:#fff;">سبورت</h3>
+            <p style="color:#999;">مركبات السبورت</p>
+        </div>
+    </div>
+
+    <div class="rule-card" onclick="openModal('drift-modal')">
+        <div class="icon-box" style="background-color:#9C27B0;">
+            <i class="fa-solid fa-road"></i>
+        </div>
+        <div>
+            <h3 style="margin:0; color:#fff;">درفت</h3>
+            <p style="color:#999;">مركبات الدرفت</p>
+        </div>
+    </div>
+
+    <div class="rule-card" onclick="openModal('pickup-modal')">
+        <div class="icon-box" style="background-color:#795548;">
+            <i class="fa-solid fa-truck-pickup"></i>
+        </div>
+        <div>
+            <h3 style="margin:0; color:#fff;">بيك أب</h3>
+            <p style="color:#999;">مركبات البيك أب</p>
+        </div>
+    </div>
+
+    <div class="rule-card" onclick="openModal('truck-modal')">
+        <div class="icon-box" style="background-color:#FF9800;">
+            <i class="fa-solid fa-truck"></i>
+        </div>
+        <div>
+            <h3 style="margin:0; color:#fff;">حمولات</h3>
+            <p style="color:#999;">مركبات الحمولات</p>
+        </div>
+    </div>
+
+    <div class="rule-card" onclick="openModal('government-modal')">
+        <div class="icon-box" style="background-color:#3F51B5;">
+            <i class="fa-solid fa-building-shield"></i>
+        </div>
+        <div>
+            <h3 style="margin:0; color:#fff;">مركبات حكومية</h3>
+            <p style="color:#999;">مركبات الجهات الحكومية</p>
+        </div>
+    </div>
+
+</div>
 </div>
         </div>
 
