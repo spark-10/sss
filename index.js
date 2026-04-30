@@ -982,10 +982,7 @@ app.get('/store', (req, res) => {
 
 </div> <!-- إغلاق قسم ضعف الخبرة -->
 
-<h2 style="color:#d4af37; margin-top:70px;">قسم المركبات</h2>
 
-<div class="cards-container">
-<div id="sedan-modal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('sedan-modal')">&times;</span>
 
@@ -1014,6 +1011,18 @@ app.get('/store', (req, res) => {
                     max-width:100%;
                     border-radius:15px;
                     border:2px solid rgba(212,175,55,0.3);
+                    <h2 style="color:#d4af37; margin-top:70px;">قسم المركبات</h2>
+
+<div class="cards-container">
+    <!-- كروت المركبات -->
+</div>
+
+<!-- هنا الصق مودال السيدان -->
+<div id="sedan-modal" class="modal">
+    ...
+</div>
+
+<div id="sponsor-modal" class="modal">
                 ">
             </div>
 
