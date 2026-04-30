@@ -915,7 +915,49 @@ app.get('/store', (req, res) => {
                     <p style="color:#999;">تفاصيل الراعي الاستراتيجي</p>
                 </div>
             </div>
+<div class="rule-card" onclick="openModal('strategic-modal')">
+    ...
+</div>
 
+</div>
+
+<!-- هنا الصق قسم ضعف الخبرة -->
+
+<h2 style="color:#d4af37; margin-top:70px;">قسم ضعف الخبرة</h2>
+
+<div class="cards-container">
+
+    <div class="rule-card" onclick="openModal('xp6-modal')">
+        <div class="icon-box" style="background-color:#4CAF50;">
+            <i class="fa-solid fa-bolt"></i>
+        </div>
+        <div>
+            <h3 style="margin:0; color:#fff;">ضعف خبرة 6 ساعات</h3>
+            <p style="color:#999;">تفاصيل العرض</p>
+        </div>
+    </div>
+
+    <div class="rule-card" onclick="openModal('xp12-modal')">
+        <div class="icon-box" style="background-color:#66BB6A;">
+            <i class="fa-solid fa-bolt"></i>
+        </div>
+        <div>
+            <h3 style="margin:0; color:#fff;">ضعف خبرة 12 ساعة</h3>
+            <p style="color:#999;">تفاصيل العرض</p>
+        </div>
+    </div>
+
+    <div class="rule-card" onclick="openModal('xp24-modal')">
+        <div class="icon-box" style="background-color:#2E7D32;">
+            <i class="fa-solid fa-bolt"></i>
+        </div>
+        <div>
+            <h3 style="margin:0; color:#fff;">ضعف خبرة 24 ساعة</h3>
+            <p style="color:#999;">تفاصيل العرض</p>
+        </div>
+    </div>
+
+</div>
         </div>
 
         <div id="sponsor-modal" class="modal">
