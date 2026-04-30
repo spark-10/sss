@@ -270,6 +270,18 @@ app.get('/rules', (req, res) => {
                 </div>
             </div>
 
+            <div class="rule-card" onclick="openModal('redcrescent-modal')">
+    <div class="icon-box" style="background-color:#e53935;">
+        <i class="fa-solid fa-heart-pulse"></i>
+    </div>
+    <div>
+        <h3 style="margin:0; color:#fff;">قوانين الهلال الأحمر</h3>
+        <p style="color:#999; font-size:14px; margin-top:5px;">
+            قوانين الإسعاف والطوارئ
+        </p>
+    </div>
+</div>
+
             <div class="rule-card" onclick="openModal('border-modal')">
                 <div class="icon-box" style="background-color: #00bcd4;"><i class="fa-solid fa-ship"></i></div>
                 <div>
@@ -445,7 +457,43 @@ app.get('/rules', (req, res) => {
                 </ul>
             </div>
         </div>
+<div id="redcrescent-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('redcrescent-modal')">&times;</span>
 
+        <h2>قوانين الهلال الأحمر</h2>
+
+        <div class="highlight-box">
+            يتم اعتماد هذه القوانين على جميع موظفين الهلال الأحمر داخل المقاطعة ويجب الالتزام بها بشكل كامل.
+        </div>
+
+        <ul class="rules-list">
+            <li>1. يجب على كل مسعف التمتع بصفات المسامحة والعمل الجماعي.</li>
+            <li>2. الالتزام بقوانين المرور أمر واجب على الجميع باستثناء حالات البلاغات.</li>
+            <li>3. عدم إعطاء أي شخص معدات الإسعافات الأولية.</li>
+            <li>4. يجب الالتزام بالزي الرسمي للهلال الأحمر وعدم التعديل عليه.</li>
+            <li>5. انتظار أمر العمليات في توجيهك للبلاغ المتواجد بالمنطقة المتوزع لها.</li>
+            <li>6. بعد إنعاش المريض يجب تمثيل الاطمئنان على صحته وتهنئته بالسلامة وعرض نقله للمستشفى.</li>
+            <li>7. عند وجود حادث مروري يجب عليك طلب المرور.</li>
+            <li>8. عند وجود إطلاق نار على الجثة يجب عليك طلب الشرطة للتحقيق.</li>
+            <li>9. عدم دخول مناطق الاستنفارات إلا بإذن من الشرطة.</li>
+            <li>10. عدم مقاطعة البلاغات في الراديو.</li>
+            <li>11. يجب الالتزام بالمركبة المحددة لك ولا يمكنك تغييرها.</li>
+            <li>12. عليك الهرب من المناطق التي يوجد بها إطلاق نار وعدم العودة إلا بطلب من الشرطة.</li>
+            <li>13. عدم تشغيل أنوار الطوارئ في سيارات الإسعاف إلا في الحالات الطارئة.</li>
+            <li>14. ممنوع منعًا باتًا حمل أي سلاح.</li>
+            <li>15. ممنوع التعدي على أي شخص أو السرقة أو القيام بأي عمل إجرامي.</li>
+            <li>16. المسعف من أهم الوظائف في الحياة الواقعية لذلك يجب الالتزام بتقمص الشخصية بشكل كامل.</li>
+        </ul>
+
+        <div class="note-box">
+            القوانين قابلة للتعديل، يرجى الاطلاع عليها بشكل دوري.
+        </div>
+
+        <div class="danger-box">
+            يتم اعتماد وتطبيق هذه القوانين على جميع موظفي الهلال الأحمر داخل السيرفر.
+        </div>
+    </div>
         <div id="border-modal" class="modal">
             <div class="modal-content">
                 <span class="close-btn" onclick="closeModal('border-modal')">&times;</span>
