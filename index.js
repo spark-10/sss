@@ -935,7 +935,7 @@ app.get('/store', (req, res) => {
 
     <div class="rule-card" onclick="openModal('xp6-modal')">
       <div class="icon-box" style="
-    background-image:url('https://cdn.discordapp.com/attachments/1396289374735302837/1499248698658390098/image.png?ex=69f41ba8&is=69f2ca28&hm=fc4297235293ab4438d5ae07438a2e16cc3fc7e078267c3e0f22fc37a5f38159&');
+    background-image:url('https://i.imgur.com/2QXIcon.png');
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
