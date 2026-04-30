@@ -1005,7 +1005,15 @@ app.get('/store', (req, res) => {
             <p style="color:#999;">مركبات السبورت</p>
         </div>
     </div>
-
+<div class="rule-card" onclick="openModal('jeep-modal')">
+    <div class="icon-box" style="background-color:#4CAF50;">
+        <i class="fa-solid fa-car-on"></i>
+    </div>
+    <div>
+        <h3 style="margin:0; color:#fff;">جيب</h3>
+        <p style="color:#999;">مركبات الجيب</p>
+    </div>
+</div>
     <div class="rule-card" onclick="openModal('drift-modal')">
         <div class="icon-box" style="background-color:#9C27B0;">
             <i class="fa-solid fa-road"></i>
@@ -1074,12 +1082,12 @@ app.get('/store', (req, res) => {
 
         <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:25px;">
 
-            <img src="https://a.top4top.io/p_3770qbt316.png" style="width:300px; border-radius:15px;">
-            <img src="https://b.top4top.io/p_3770umjun1.png" style="width:300px; border-radius:15px;">
-            <img src="https://a.top4top.io/p_3770d0xeb1.png " style="width:300px; border-radius:15px;">
-            <img src="https://d.top4top.io/p_3770td9kw1.png" style="width:300px; border-radius:15px;">
-            <img src="https://d.top4top.io/p_3770td9kw1.png" style="width:300px; border-radius:15px;">
-            <img src="https://d.top4top.io/p_37703mby38.png" style="width:300px; border-radius:15px;">
+            <img src="" style="width:300px; border-radius:15px;">
+            <img src="" style="width:300px; border-radius:15px;">
+            <img src="" style="width:300px; border-radius:15px;">
+            <img src="" style="width:300px; border-radius:15px;">
+            <img src="" style="width:300px; border-radius:15px;">
+            <img src="" style="width:300px; border-radius:15px;">
             <img src="رابط_الصورة7" style="width:300px; border-radius:15px;">
             <img src="رابط_الصورة8" style="width:300px; border-radius:15px;">
 
@@ -1089,6 +1097,27 @@ app.get('/store', (req, res) => {
             للشراء أو الاستفسار يرجى فتح تذكرة متجر داخل الديسكورد.
         </div>
     </div>
+    <div id="jeep-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('jeep-modal')">&times;</span>
+
+        <h2>مركبات الجيب</h2>
+
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:25px;">
+
+            <img src="رابط_الصورة1" style="width:300px; border-radius:15px;">
+            <img src="رابط_الصورة2" style="width:300px; border-radius:15px;">
+            <img src="رابط_الصورة3" style="width:300px; border-radius:15px;">
+            <img src="رابط_الصورة4" style="width:300px; border-radius:15px;">
+            <img src="رابط_الصورة5" style="width:300px; border-radius:15px;">
+
+        </div>
+
+        <div class="note-box" style="margin-top:35px;">
+            للشراء أو الاستفسار يرجى فتح تذكرة متجر داخل الديسكورد.
+        </div>
+    </div>
+</div>
 </div>
         <div id="sponsor-modal" class="modal">
     <div class="modal-content">
