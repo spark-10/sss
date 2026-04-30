@@ -915,9 +915,7 @@ app.get('/store', (req, res) => {
                     <p style="color:#999;">تفاصيل الراعي الاستراتيجي</p>
                 </div>
             </div>
-<div class="rule-card" onclick="openModal('strategic-modal')">
 
-</div>
 
 </div>
 
