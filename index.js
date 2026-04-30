@@ -808,7 +808,97 @@ app.get('/jobs', (req, res) => {
 </div>
     `));
 });
-app.get('/store', (req, res) => res.send(layout(`<h1>المتجر</h1><p>قريباً...</p>`)));
+app.get('/store', (req, res) => {
+    res.send(layout(`
+        <h1 style="font-size:45px; color:#d4af37; margin-bottom:15px;">المتجر</h1>
+        <p style="color:#aaa; margin-bottom:40px;">
+            استعرض المنتجات والمميزات الخاصة داخل السيرفر
+        </p>
+
+        <div class="cards-container">
+
+            <div class="rule-card" onclick="openModal('sponsor-modal')">
+                <div class="icon-box" style="background-color:#d4af37;">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+                <div>
+                    <h3 style="margin:0; color:#fff;">الراعي الرسمي</h3>
+                    <p style="color:#999; font-size:14px;">مميزات بطاقة الراعي</p>
+                </div>
+            </div>
+
+            <div class="rule-card" onclick="openModal('xp-modal')">
+                <div class="icon-box" style="background-color:#4CAF50;">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div>
+                    <h3 style="margin:0; color:#fff;">ضعف الخبرة</h3>
+                    <p style="color:#999; font-size:14px;">مضاعفة الخبرة داخل السيرفر</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- الراعي الرسمي -->
+        <div id="sponsor-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('sponsor-modal')">&times;</span>
+
+                <h2>نبذة عن الراعي الرسمي</h2>
+
+                <div class="highlight-box">
+                    بطاقة الراعي تمنحك مجموعة من المميزات الحصرية داخل السيرفر لتجعل تجربتك أكثر احترافية وتميزًا.
+                </div>
+
+                <h3>مميزات بطاقة الراعي</h3>
+
+                <ul class="rules-list">
+                    <li>إعفاء من رسوم حجز المركبات العادي.</li>
+                    <li>إعفاء من رسوم دخول الميناء من الساعة 7 صباحًا حتى 7 مساءً.</li>
+                    <li>أولوية الدخول للسيرفر عند وجود طابور انتظار.</li>
+                    <li>إمكانية تسجيل الدخول في الوظيفة حتى لو كان العدد مكتمل.</li>
+                    <li>الحصول على بطاقة خاصة للراعي داخل السيرفر.</li>
+                    <li>احتساب الاشتراك من تاريخ استلام البطاقة داخل السيرفر.</li>
+                    <li>إضافة مميزات مستقبلية يتم الإعلان عنها لاحقًا.</li>
+                    <li>لا يمكن شراء نفس الراعي مرتين قبل انتهاء الاشتراك الحالي.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ضعف الخبرة -->
+        <div id="xp-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('xp-modal')">&times;</span>
+
+                <h2>نبذة عن ضعف الخبرة</h2>
+
+                <div class="highlight-box">
+                    استغل وقتك بذكاء وارفع مستواك بسرعة أكبر داخل السيرفر.
+                </div>
+
+                <h3>مميزات مضاعفة الخبرة</h3>
+
+                <ul class="rules-list">
+                    <li>مضاعفة الخبرة بنسبة 50%.</li>
+                    <li>احتساب الوقت تلقائيًا أثناء اتصالك بالسيرفر فقط.</li>
+                    <li>إيقاف احتساب الوقت عند الانقطاع.</li>
+                </ul>
+
+                <h3>تشمل مضاعفة الخبرة</h3>
+
+                <ul class="rules-list">
+                    <li>إنعاش المرضى في الطوارئ الطبية.</li>
+                    <li>حجز المركبات للوظائف المعتمدة.</li>
+                    <li>البيع داخل الموانئ.</li>
+                    <li>توصيل الصناديق إلى المتاجر.</li>
+                    <li>الخبرة المكتسبة مع الرواتب.</li>
+                    <li>تركيب التعديلات على المركبات.</li>
+                    <li>والعديد من الأنشطة الأخرى.</li>
+                </ul>
+            </div>
+        </div>
+    `));
+});
 
 const adminEmails = [
     "mx@gmail.com",
