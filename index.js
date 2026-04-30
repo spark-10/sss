@@ -982,39 +982,6 @@ app.get('/store', (req, res) => {
 
 </div> <!-- إغلاق قسم ضعف الخبرة -->
 
-
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('sedan-modal')">&times;</span>
-
-        <h2>مركبات السيدان</h2>
-
-        <div style="
-            display:flex;
-            flex-wrap:wrap;
-            justify-content:center;
-            gap:25px;
-            margin-top:30px;
-        ">
-
-            <div style="text-align:center;">
-                <img src="https://d.top4top.io/p_37703mby38.png" style="
-                    width:350px;
-                    max-width:100%;
-                    border-radius:15px;
-                    border:2px solid rgba(212,175,55,0.3);
-                ">
-            </div>
-
-            <div style="text-align:center;">
-                <img src="https://e.top4top.io/p_3770z77kn2.png" style="
-                    width:350px;
-                    max-width:100%;
-                    border-radius:15px;
-                    border:2px solid rgba(212,175,55,0.3);
-
-            </div>
-
-        </div>
 <h2 style="color:#d4af37; margin-top:70px;">قسم المركبات</h2>
 
 <div class="cards-container">
@@ -1031,6 +998,23 @@ app.get('/store', (req, res) => {
 
 </div>
 
+<div id="sedan-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('sedan-modal')">&times;</span>
+
+        <h2>مركبات السيدان</h2>
+
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:25px;">
+            <img src="https://d.top4top.io/p_37703mby38.png" style="width:350px; border-radius:15px;">
+            <img src="https://e.top4top.io/p_3770z77kn2.png" style="width:350px; border-radius:15px;">
+        </div>
+
+        <div class="note-box" style="margin-top:35px;">
+            للشراء أو الاستفسار يرجى فتح تذكرة متجر داخل الديسكورد.
+        </div>
+    </div>
+</div>
+ 
 <div id="sedan-modal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('sedan-modal')">&times;</span>
