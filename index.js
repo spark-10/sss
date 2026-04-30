@@ -986,29 +986,7 @@ app.get('/store', (req, res) => {
 
 </div> <!-- cards-container -->
 
-<!-- مودال السيدان -->
-<div id="sedan-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('sedan-modal')">&times;</span>
-        <h2>مركبات السيدان</h2>
-    </div>
-</div>
 
-<!-- مودال السبورت -->
-<div id="sport-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('sport-modal')">&times;</span>
-        <h2>مركبات السبورت</h2>
-    </div>
-</div>
-
-<!-- مودال الجيب -->
-<div id="jeep-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('jeep-modal')">&times;</span>
-        <h2>مركبات الجيب</h2>
-    </div>
-</div>
     <div class="rule-card" onclick="openModal('drift-modal')">
         <div class="icon-box" style="background-color:#9C27B0;">
             <i class="fa-solid fa-road"></i>
