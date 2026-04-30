@@ -836,9 +836,14 @@ app.get('/store', (req, res) => {
 </div>
 
 <div class="rule-card" onclick="openModal('xp-modal')">
-    <div class="icon-box" style="background-color:#4CAF50;">
-        <i class="fa-solid fa-bolt"></i>
-    </div>
+  <div class="icon-box" style="
+    background-image:url('https://cdn.discordapp.com/attachments/1396289374735302837/1499248698658390098/image.png?ex=69f41ba8&is=69f2ca28&hm=fc4297235293ab4438d5ae07438a2e16cc3fc7e078267c3e0f22fc37a5f38159&');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-color:transparent;
+">
+</div>
     <div>
         <h3 style="margin:0; color:#fff;">نبذة عن ضعف الخبرة</h3>
         <p style="color:#999;">مضاعفة الخبرة داخل السيرفر</p>
@@ -939,9 +944,14 @@ app.get('/store', (req, res) => {
     </div>
 
     <div class="rule-card" onclick="openModal('xp12-modal')">
-        <div class="icon-box" style="background-color:#66BB6A;">
-            <i class="fa-solid fa-bolt"></i>
-        </div>
+  <div class="icon-box" style="
+    background-image:url('https://cdn.discordapp.com/attachments/1396289374735302837/1499248698658390098/image.png?ex=69f41ba8&is=69f2ca28&hm=fc4297235293ab4438d5ae07438a2e16cc3fc7e078267c3e0f22fc37a5f38159&');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-color:transparent;
+">
+</div>
         <div>
             <h3 style="margin:0; color:#fff;">ضعف خبرة 12 ساعة</h3>
             <p style="color:#999;">تفاصيل العرض في الديسكورد </p>
@@ -949,14 +959,21 @@ app.get('/store', (req, res) => {
     </div>
 
 <div class="rule-card" onclick="openModal('xp24-modal')">
-    <div class="icon-box" style="background-color:#2E7D32;">
-        <i class="fa-solid fa-bolt"></i>
-    </div>
-    <div>
-        <h3 style="margin:0; color:#fff;">ضعف خبرة 24 ساعة</h3>
-        <p style="color:#999;">تفاصيل العرض في الديسكورد</p>
-    </div>
+  <div class="icon-box" style="
+    background-image:url('https://cdn.discordapp.com/attachments/1396289374735302837/1499248698658390098/image.png?ex=69f41ba8&is=69f2ca28&hm=fc4297235293ab4438d5ae07438a2e16cc3fc7e078267c3e0f22fc37a5f38159&');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-color:transparent;
+">
+  </div>
+
+  <div>
+      <h3 style="margin:0; color:#fff;">ضعف خبرة 24 ساعة</h3>
+      <p style="color:#999;">تفاصيل العرض في الديسكورد</p>
+  </div>
 </div>
+
 
 </div> <!-- إغلاق قسم ضعف الخبرة -->
 
